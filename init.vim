@@ -129,7 +129,6 @@ Plug 'nvim-pack/nvim-spectre'
 Plug 'akinsho/toggleterm.nvim'
 
 
-
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
