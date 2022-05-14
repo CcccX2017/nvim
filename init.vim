@@ -75,7 +75,7 @@ Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
 " 顶部标签页
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v1.2.0' }
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -87,6 +87,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'j-hui/fidget.nvim'
 
 " editor enhance
 " 自动补全括号
@@ -98,7 +99,7 @@ Plug 'stevearc/aerial.nvim'
 " 快捷键
 Plug 'folke/which-key.nvim'
 " 目录结构
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua', { 'tag': 'nightly' }
 " 状态栏
 Plug 'nvim-lualine/lualine.nvim'
 " 首页
