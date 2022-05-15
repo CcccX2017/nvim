@@ -133,6 +133,10 @@ Plug 'voldikss/vim-translator'
 Plug 'nvim-pack/nvim-spectre'
 Plug 'akinsho/toggleterm.nvim'
 
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'ahmedkhalf/project.nvim'
+
 
 call plug#end()
 " ================================
