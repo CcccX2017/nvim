@@ -78,7 +78,7 @@ Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
 " 顶部标签页
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v1.2.0' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
