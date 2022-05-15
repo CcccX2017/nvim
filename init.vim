@@ -66,7 +66,8 @@ Plug 'rcarriga/nvim-notify'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " dap 调试相关
-Plug 'mfussenegger/nvim-dap'
+Plug 'ravenxrz/DAPInstall.nvim'
+Plug 'ravenxrz/nvim-dap'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -136,21 +137,13 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'ahmedkhalf/project.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
 " ================================
-
-" ==================== tcomment_vim ====================
-" nnoremap ci cl
-let g:tcomment_textobject_inlinecomment = ''
-nmap <LEADER>cn g>c
-vmap <LEADER>cn g>
-nmap <LEADER>cu g<c
-vmap <LEADER>cu g<
-
 
 " 主题设置
 if has('termguicolors')
