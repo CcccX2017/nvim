@@ -144,6 +144,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
 
+Plug 'folke/todo-comments.nvim'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
