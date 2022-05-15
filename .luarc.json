@@ -1,9 +1,12 @@
 {
     "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
     "Lua.diagnostics.disable": [
-        "different-requires"
+        "different-requires",
+        "unused-local"
     ],
     "Lua.diagnostics.globals": [
-        "require"
+        "require",
+        "vim",
+        "cmp_config"
     ]
 }
