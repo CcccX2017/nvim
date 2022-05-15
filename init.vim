@@ -145,6 +145,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
 
 Plug 'folke/todo-comments.nvim'
+Plug 'sindrets/winshift.nvim'
 
 call plug#end()
 " ================================
