@@ -150,6 +150,8 @@ Plug 'sindrets/winshift.nvim'
 Plug 'ldelossa/litee.nvim'
 Plug 'ldelossa/litee-calltree.nvim'
 
+Plug 'skanehira/preview-markdown.vim'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
