@@ -152,6 +152,8 @@ Plug 'ldelossa/litee-calltree.nvim'
 
 Plug 'skanehira/preview-markdown.vim'
 
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
