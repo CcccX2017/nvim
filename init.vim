@@ -49,6 +49,9 @@ endif
 " ============================
 call plug#begin('~/.config/nvim/plugged')
 
+" 加速插件
+Plug 'lewis6991/impatient.nvim'
+
 " 主题相关插件
 Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/gruvbox-material'

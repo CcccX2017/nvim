@@ -55,10 +55,19 @@ map th :-tabnext<CR>
 map tl :+tabnext<CR>
 
 " 顶部标签栏切换
-nnoremap <LEADER><right> :BufferLineCycleNext<CR>
-nnoremap <LEADER><left> :BufferLineCyclePrev<CR>
+nnoremap <silent><LEADER><right> :BufferLineCycleNext<CR>
+nnoremap <silent><LEADER><left> :BufferLineCyclePrev<CR>
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
 " tree explorer 快捷键
-nnoremap tt :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <silent>tt :NvimTreeToggle<CR>
+nnoremap <silent><leader>r :NvimTreeRefresh<CR>
+nnoremap <silent><leader>n :NvimTreeFindFile<CR>
