@@ -68,6 +68,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " dap 调试相关
 Plug 'ravenxrz/DAPInstall.nvim'
 Plug 'ravenxrz/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -103,7 +104,7 @@ Plug 'stevearc/aerial.nvim'
 " 快捷键
 Plug 'folke/which-key.nvim'
 " 目录结构
-Plug 'kyazdani42/nvim-tree.lua', { 'tag': 'nightly' }
+Plug 'kyazdani42/nvim-tree.lua'
 " 状态栏
 Plug 'nvim-lualine/lualine.nvim'
 " 首页
@@ -139,6 +140,9 @@ Plug 'tpope/vim-surround'
 Plug 'ahmedkhalf/project.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Git
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'sindrets/diffview.nvim'
 
 call plug#end()
 " ================================
