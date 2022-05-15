@@ -159,6 +159,17 @@ call plug#end()
 " ===== End Plugins settings =====
 " ================================
 
+" ==================== tcomment_vim ====================
+" nnoremap ci cl
+let g:tcomment_textobject_inlinecomment = ''
+nmap <LEADER>cn g>c
+vmap <LEADER>cn g>
+nmap <LEADER>cu g<c
+vmap <LEADER>cu g<
+
+" let g:quickrun_config = {}
+" let g:quickrun_config.haskell = {'command' : 'runhugs'}
+
 " 主题设置
 if has('termguicolors')
     set termguicolors

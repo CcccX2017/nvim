@@ -71,3 +71,6 @@ nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 nnoremap <silent>tt :NvimTreeToggle<CR>
 nnoremap <silent><leader>r :NvimTreeRefresh<CR>
 nnoremap <silent><leader>n :NvimTreeFindFile<CR>
+
+" 快速运行代码
+nnoremap <silent><leader>qr :<C-u>QuickRun<CR>
