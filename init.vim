@@ -147,6 +147,9 @@ Plug 'sindrets/diffview.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'sindrets/winshift.nvim'
 
+Plug 'ldelossa/litee.nvim'
+Plug 'ldelossa/litee-calltree.nvim'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
