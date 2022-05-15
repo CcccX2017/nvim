@@ -154,6 +154,8 @@ Plug 'skanehira/preview-markdown.vim'
 
 Plug 'thinca/vim-quickrun'
 
+Plug 'Shatur/neovim-session-manager'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
