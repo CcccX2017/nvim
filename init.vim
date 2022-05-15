@@ -156,6 +156,9 @@ Plug 'thinca/vim-quickrun'
 
 Plug 'Shatur/neovim-session-manager'
 
+" Vim 中文文档
+Plug 'yianwillis/vimcdoc'
+
 call plug#end()
 " ================================
 " ===== End Plugins settings =====
