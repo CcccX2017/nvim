@@ -8,23 +8,23 @@
 ## MacOS(Homebrew) 
 
 ```shell	
-brew install fd grow
+brew install fd glow
 ```
 
 ## Arch
 
 ```shell
-sudo pacman -S fd grow
+sudo pacman -S fd glow
 or
-paru -S fd grow
+paru -S fd glow
 or
-sudo yay -S fd grow
+sudo yay -S fd glow
 ```
 
 ## Ubuntu
 
 ```shell
-sudo apt install fd grow
+sudo apt install fd glow
 ```
 
 # LICENSE
