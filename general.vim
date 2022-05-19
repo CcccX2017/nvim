@@ -24,6 +24,10 @@ set incsearch
 set ignorecase
 " 智能大小写
 set smartcase
+" 新文件放在右边
+set splitright
+" 新文件放在下边
+set splitbelow
 
 set hidden
 set updatetime=100

@@ -86,8 +86,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'tom-anders/telescope-vim-bookmarks.nvim'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
-" 顶部标签页
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -112,6 +110,8 @@ Plug 'stevearc/aerial.nvim'
 Plug 'folke/which-key.nvim'
 " 目录结构
 Plug 'kyazdani42/nvim-tree.lua'
+" 顶部标签页
+Plug 'akinsho/bufferline.nvim', { 'tag': '*'}
 " 状态栏
 Plug 'nvim-lualine/lualine.nvim'
 " 首页

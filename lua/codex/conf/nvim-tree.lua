@@ -77,7 +77,7 @@ nvim_tree.setup({
   open_on_tab = false,
   sort_by = "name",
   view = {
-    width = 30,
+    width = 32,
     height = 30,
     hide_root_folder = false,
     side = "left",
@@ -120,7 +120,7 @@ nvim_tree.setup({
   },
   ignore_ft_on_setup = {},
   system_open = {
-    cmd = "",
+    cmd = nil,
     args = {},
   },
   diagnostics = {
@@ -152,7 +152,7 @@ nvim_tree.setup({
     },
     open_file = {
       quit_on_open = false,
-      resize_window = false,
+      resize_window = true,
       window_picker = {
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
