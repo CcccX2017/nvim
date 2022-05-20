@@ -29,14 +29,14 @@ map sv <C-w>t<C-w>H
 " 竖向分屏切换为横向分屏
 map sb <C-w>t<C-w>K
 
-" 空格 l 向左切换
-map <LEADER>l <C-w>l
-" 空格 k 向上切换
-map <LEADER>k <C-w>k
-" 空格 h 向右切换
-map <LEADER>h <C-w>h
-" 空格 j 向下切换
-map <LEADER>j <C-w>j
+" Ctrl l 向左切换
+map <C-l> <C-w>l
+" Ctrl k 向上切换
+map <C-k> <C-w>k
+" Ctrl h 向右切换
+map <C-h> <C-w>h
+" Ctrl j 向下切换
+map <C-j> <C-w>j
 
 " 方向键上 分屏高度+5
 map <up> :res +5<CR>
