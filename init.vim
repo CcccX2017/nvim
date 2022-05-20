@@ -179,7 +179,12 @@ vmap <LEADER>cn g>
 nmap <LEADER>cu g<c
 vmap <LEADER>cu g<
 
-" let g:quickrun_config = {}
+
+let g:quickrun_config = {
+  \"_": {
+  \ "outputter": "messag"
+  \},
+\}
 " let g:quickrun_config.haskell = {'command' : 'runhugs'}
 
 " 主题设置

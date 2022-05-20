@@ -73,4 +73,5 @@ nnoremap <silent><leader>r :NvimTreeRefresh<CR>
 nnoremap <silent><leader>n :NvimTreeFindFile<CR>
 
 " 快速运行代码
-nnoremap <silent><leader>qr :<C-u>QuickRun<CR>
+nnoremap <silent><LEADER>rm <cmd>:QuickRun<CR> 
+" :QuickRun<CR>
