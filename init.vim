@@ -210,9 +210,11 @@ let g:rainbow_active = 1
 
 let g:quickrun_config = {
   \"_": {
-  \ "outputter": "message"
+  \ "outputter": "message",
   \},
 \}
+let g:quickrun_no_default_key_mappings = 1
+map <leader>qr :QuickRun<CR>
 " let g:quickrun_config.haskell = {'command' : 'runhugs'}
 
 " 主题设置

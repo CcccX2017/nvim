@@ -1,3 +1,5 @@
+let mapleader=" "
+
 noremap = nzz
 noremap - Nzz
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -73,5 +75,4 @@ nnoremap <silent><leader>r :NvimTreeRefresh<CR>
 nnoremap <silent><leader>n :NvimTreeFindFile<CR>
 
 " 快速运行代码
-nnoremap <silent><LEADER>rm <cmd>:QuickRun<CR> 
-" :QuickRun<CR>
+" map <leader>qr :QuickRun<CR>
