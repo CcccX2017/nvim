@@ -210,7 +210,7 @@ let g:rainbow_active = 1
 
 let g:quickrun_config = {
   \"_": {
-  \ "outputter": "messag"
+  \ "outputter": "message"
   \},
 \}
 " let g:quickrun_config.haskell = {'command' : 'runhugs'}
