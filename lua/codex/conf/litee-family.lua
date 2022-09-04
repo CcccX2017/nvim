@@ -1,4 +1,4 @@
--- configure the litee.nvim library 
+-- configure the litee.nvim library
 local status_ok, litee_lib = pcall(require, "litee.lib")
 if not status_ok then
   vim.notify("litee_lib not found!")
