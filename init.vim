@@ -128,7 +128,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'f3fora/cmp-spell'
 Plug 'ethanholz/nvim-lastplace'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 " 代码片段
 Plug 'L3MON4D3/LuaSnip'
