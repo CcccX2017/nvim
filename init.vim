@@ -63,6 +63,7 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'EdenEast/nightfox.nvim'
 " An implementation of the Popup API from vim in Neovim
 Plug 'nvim-lua/popup.nvim' 
 " Useful lua functions used ny lots of plugins
