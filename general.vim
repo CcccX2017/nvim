@@ -33,6 +33,8 @@ set hidden
 set updatetime=100
 set shortmess+=c
 
+set clipboard=unnamedplus
+
 set nocompatible
 filetype on
 filetype indent on
