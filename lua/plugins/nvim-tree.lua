@@ -14,6 +14,12 @@ return {
       },
       renderer = {
         group_empty = true,
+        root_folder_label = function(path)
+          return " " .. vim.fn.fnamemodify(path, ":~:s?$?")
+        end,
+        icons = {
+          webdev_colors = true,
+        },
       },
     })
   end,
