@@ -16,9 +16,10 @@ return {
       local fg_gutter = "#627E97"
       local border = "#547998"
       require("tokyonight").setup({
-        style = "night",
+        style = "storm",
         transparent = transparent,
         styles = {
+          functions = { italic = true },
           sidebars = transparent and "transparent" or "dark",
           floats = transparent and "transparent" or "dark",
         },
@@ -51,7 +52,32 @@ return {
               bg = c.none,
               fg = c.todo,
             }
+            hl.TreesitterContextLineNumber = {
+              fg = "#f5e0dc",
+            }
+            hl.LazyH1 = {
+              bg = c.none,
+              fg = c.blue5,
+            }
+            hl.LazyButton = {
+              bg = c.none,
+              fg = c.fg_gutter,
+            }
+            hl.LazyButtonActive = {
+              bg = c.none,
+              fg = c.blue5,
+            }
+            hl.LazySpecial = {
+              fg = "#a6e3a1",
+            }
           end
+
+          hl.PanelHeading = {
+            fg = "#b4befe",
+            bg = transparent and c.none or c.bg_dark,
+            bold = true,
+            italic = true,
+          }
 
           hl.CursorLineNr = {
             fg = "#F1FAEE",

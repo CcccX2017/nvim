@@ -1,5 +1,66 @@
 return {
   {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      -- 解决 No information available提示问题
+      table.insert(opts.routes, {
+        filter = {
+          event = "notify",
+          find = "No information available",
+        },
+        opts = {
+          skip = true,
+        },
+      })
+
+      -- volar的hybridModel为true时，解决No LSP Definitions found的问题
+      require("utils.vue-version").repair_no_lsp_definitions_found(opts)
+
+      local focused = true
+      vim.api.nvim_create_autocmd("FocusGained", {
+        callback = function()
+          focused = true
+        end,
+      })
+      vim.api.nvim_create_autocmd("FocusLost", {
+        callback = function()
+          focused = false
+        end,
+      })
+      table.insert(opts.routes, 1, {
+        filter = {
+          cond = function()
+            return not focused
+          end,
+        },
+        view = "notify_send",
+        opts = { stop = false },
+      })
+
+      opts.commands = {
+        all = {
+          view = "split",
+          opts = { enter = true, format = "details" },
+          filter = {},
+        },
+      }
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "markdown",
+        callback = function(event)
+          vim.schedule(function()
+            require("noice.text.markdown").keys(event.buf)
+          end)
+        end,
+      })
+
+      opts.presets.lsp_doc_border = true
+    end,
+    dependencies = {
+      { "MunifTanjim/nui.nvim", lazy = false },
+    },
+  },
+  {
     "nvimdev/dashboard-nvim",
     lazy = false,
     opts = function(_, opts)
@@ -14,43 +75,11 @@ return {
       require("rainbow-delimiters.setup").setup({})
     end,
   },
-  -- {
-  --   "xiyaowong/transparent.nvim",
-  --   config = function()
-  --     require("transparent").setup({ -- Optional, you don't have to run setup.
-  --       groups = { -- table: default groups
-  --         "Normal",
-  --         "NormalNC",
-  --         "Comment",
-  --         "Constant",
-  --         "Special",
-  --         "Identifier",
-  --         "Statement",
-  --         "PreProc",
-  --         "Type",
-  --         "Underlined",
-  --         "Todo",
-  --         "String",
-  --         "Function",
-  --         "Conditional",
-  --         "Repeat",
-  --         "Operator",
-  --         "Structure",
-  --         "LineNr",
-  --         "NonText",
-  --         "SignColumn",
-  --         -- "CursorLine",
-  --         -- "CursorLineNr",
-  --         "StatusLine",
-  --         "StatusLineNC",
-  --         "EndOfBuffer",
-  --       },
-  --       extra_groups = {
-  --         "NeoTreeWinSeparator",
-  --         "NeoTreeSignColumn",
-  --       }, -- table: additional groups that should be cleared
-  --       exclude_groups = {}, -- table: groups you don't want to clear
-  --     })
-  --   end,
-  -- },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
+    opts = {
+      current_line_blame = true,
+    },
+  },
 }

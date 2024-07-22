@@ -11,6 +11,12 @@ return {
       },
       offsets = {
         {
+          filetype = "NvimTree",
+          text = " 资源管理器",
+          highlight = "Directory",
+          text_align = "center",
+        },
+        {
           filetype = "neo-tree",
           text = " 资源管理器",
           highlight = "Directory",

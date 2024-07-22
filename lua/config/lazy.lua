@@ -34,12 +34,16 @@ require("lazy").setup({
     -- coding
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
+    -- formatting
+    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.formatting.black" },
     -- lang
     { import = "lazyvim.plugins.extras.lang.vue" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.java" },
     -- util
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.util.project" },
     --ui
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
     { import = "plugins" },
