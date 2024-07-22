@@ -1,31 +1,4 @@
-# neovim
-我的``neovim``配置
+# 💤 LazyVim
 
-# 环境依赖
-
-需要安装 fd、glow
-
-## MacOS(Homebrew) 
-
-```shell	
-brew install fd glow
-```
-
-## Arch
-
-```shell
-sudo pacman -S fd glow
-or
-paru -S fd glow
-or
-sudo yay -S fd glow
-```
-
-## Ubuntu
-
-```shell
-sudo apt install fd glow
-```
-
-# LICENSE
-MIT
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
