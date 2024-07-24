@@ -72,6 +72,16 @@ return {
             }
           end
 
+          hl.EndOfBuffer = {
+            fg = bg,
+            bg = c.none,
+          }
+
+          hl.NonText = {
+            fg = c.none,
+            bg = c.none,
+          }
+
           hl.PanelHeading = {
             fg = "#b4befe",
             bg = transparent and c.none or c.bg_dark,
