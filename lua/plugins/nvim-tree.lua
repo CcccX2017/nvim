@@ -19,6 +19,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
   vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("CD"))
+  vim.keymap.set("n", "<leader>ep", api.tree.change_root_to_parent, opts("Telescope Find Files"))
   vim.keymap.set("n", "<leader>el", telescope_live_grep, opts("Telescope Live Grep"))
   vim.keymap.set("n", "<leader>ef", telescope_find_files, opts("Telescope Find Files"))
 end
