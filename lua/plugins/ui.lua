@@ -2,6 +2,11 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
+      opts.lsp.override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+      }
       -- 解决 No information available提示问题
       table.insert(opts.routes, {
         filter = {
