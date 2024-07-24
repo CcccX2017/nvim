@@ -13,7 +13,7 @@ return {
         {
           filetype = "NvimTree",
           text = " 资源管理器",
-          highlight = "Directory",
+          -- highlight = "File",
           text_align = "center",
         },
         {

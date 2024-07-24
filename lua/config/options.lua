@@ -19,3 +19,5 @@ opt.fillchars = {
 opt.mousemoveevent = true
 
 opt.cmdheight = 0
+
+vim.g.neotree_enabled = false

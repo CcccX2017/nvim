@@ -2,7 +2,7 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
-      opts.lsp.override["cmp.entry.get_documentation"] = false
+      -- opts.lsp.override["cmp.entry.get_documentation"] = false
 
       -- 解决 No information available提示问题
       table.insert(opts.routes, {
