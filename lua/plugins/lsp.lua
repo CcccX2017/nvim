@@ -18,10 +18,12 @@ return {
         "vue-language-server",
         "vtsls",
         "json-lsp",
+        "lemminx", -- xml
         -- formatter
         "prettierd",
         "isort", -- python formatter
         "black", -- python formatter
+        "xmlformatter",
         -- linter
         -- "eslint-lsp",
         "pylint",

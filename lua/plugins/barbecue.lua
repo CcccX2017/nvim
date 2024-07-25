@@ -1,6 +1,7 @@
 return {
   {
-    "utilyre/barbecue.nvim",
+    -- "utilyre/barbecue.nvim",
+    "CcccX2017/barbecue.nvim",
     name = "barbecue",
     enabled = true,
     version = "*",
