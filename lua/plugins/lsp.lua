@@ -17,6 +17,7 @@ return {
         "pyright",
         "vue-language-server",
         "vtsls",
+        "json-lsp",
         -- formatter
         "prettierd",
         "isort", -- python formatter

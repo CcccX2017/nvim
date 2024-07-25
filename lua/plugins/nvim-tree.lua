@@ -20,6 +20,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
   vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("CD"))
   vim.keymap.set("n", "<leader>ep", api.tree.change_root_to_parent, opts("Telescope Find Files"))
+  vim.keymap.set("n", "<leader>ec", api.tree.collapse_all, opts("Collapse All"))
   vim.keymap.set("n", "<leader>el", telescope_live_grep, opts("Telescope Live Grep"))
   vim.keymap.set("n", "<leader>ef", telescope_find_files, opts("Telescope Find Files"))
 end
@@ -39,7 +40,7 @@ return {
       view = {
         adaptive_size = false,
         centralize_selection = true,
-        width = 35,
+        width = 30,
       },
       sort = {
         sorter = "name",
@@ -53,6 +54,18 @@ return {
       },
       renderer = {
         group_empty = true,
+        indent_markers = {
+          enable = false,
+          inline_arrows = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "│",
+            bottom = "─",
+            none = " ",
+          },
+        },
+
         root_folder_label = function(path)
           return " " .. vim.fn.fnamemodify(path, ":~:s?$?")
         end,
@@ -81,20 +94,13 @@ return {
         timeout = 400,
         cygwin_support = false,
       },
+      sync_root_with_cwd = true,
       respect_buf_cwd = true,
       update_cwd = true,
-      actions = {
-        change_dir = {
-          global = true,
-        },
-      },
       update_focused_file = {
         enable = true,
         update_cwd = true,
-        update_root = {
-          enable = true,
-          ignore_list = {},
-        },
+        update_root = true,
         exclude = false,
       },
       hijack_directories = {
@@ -119,7 +125,7 @@ return {
       },
       filters = {
         enable = true,
-        dotfiles = false,
+        dotfiles = true,
         git_clean = false,
         git_ignored = false,
         no_bookmark = false,
@@ -127,14 +133,14 @@ return {
         custom = {
           "node_modules",
           "\\.cache",
-          "\\.idea",
-          "\\.git",
-          "\\.settings",
-          "\\.DS_Store",
+          -- "\\.idea",
+          -- "\\.git",
+          -- "\\.settings",
+          -- "\\.DS_Store",
           "*.iml",
-          "\\.classpath",
-          "\\.factorypath",
-          "\\.project",
+          -- "\\.classpath",
+          -- "\\.factorypath",
+          -- "\\.project",
         },
         exclude = {},
       },

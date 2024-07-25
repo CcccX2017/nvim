@@ -50,4 +50,20 @@ return {
       current_line_blame = true,
     },
   },
+  -- {
+  --   "nvim-tree/nvim-web-devicons",
+  --   opts = function()
+  --     local devicons = require("nvim-web-devicons")
+  --     -- local MiniIcons = require("mini.icons")
+  --     -- vim.notify(vim.inspect(devicons.get_icons()))
+  --     local icons = devicons.get_icons()
+  --     local json5 = icons["json5"]
+  --     devicons.set_icon({
+  --       icon = json5.icon,
+  --       color = json5.color,
+  --       cterm_color = json5.cterm_color,
+  --       name = "Json",
+  --     })
+  --   end,
+  -- },
 }
