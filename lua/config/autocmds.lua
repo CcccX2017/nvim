@@ -19,7 +19,7 @@ if not vim.g.neotree_enabled then
 end
 
 local function is_java_project()
-  local java_project_files = { "pom.xml", "build.gradle", "src" }
+  local java_project_files = { "pom.xml", "build.gradle", "src/main/java" }
   local cwd = vim.fn.getcwd() -- 获取当前工作目录
 
   for _, file in ipairs(java_project_files) do
@@ -32,7 +32,7 @@ end
 
 if is_java_project() then
   vim.api.nvim_create_autocmd({ "FileType", "BufRead", "BufNewFile" }, {
-    pattern = { "*.xml", "*.java" },
+    pattern = { "xml", "java" },
     callback = function()
       vim.bo.shiftwidth = 4
       vim.bo.tabstop = 4
