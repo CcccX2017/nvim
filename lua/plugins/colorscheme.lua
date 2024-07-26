@@ -48,6 +48,10 @@ return {
               bg = c.none,
             }
 
+            hl.TreesitterContext = {
+              bg = bg_highlight,
+            }
+
             hl.FloatBorder = {
               bg = c.none,
               fg = c.todo,

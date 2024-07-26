@@ -1,4 +1,24 @@
 return {
+  -- {
+  --   "nvim-java/nvim-java",
+  --   ft = "java",
+  --   config = false,
+  --   dependencies = {
+  --     {
+  --       "neovim/nvim-lspconfig",
+  --       opts = {
+  --         servers = {
+  --           jdtls = {},
+  --         },
+  --         setup = {
+  --           jdtls = function()
+  --             require("java").setup({})
+  --           end,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "mfussenegger/nvim-jdtls",
     opts = {

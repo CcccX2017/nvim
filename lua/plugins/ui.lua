@@ -28,6 +28,19 @@ return {
       opts.presets.lsp_doc_border = true
     end,
   },
+  -- animations
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = {
+      open = {
+        enable = false,
+      },
+      close = {
+        enable = false,
+      },
+    },
+  },
   {
     "nvimdev/dashboard-nvim",
     lazy = false,
