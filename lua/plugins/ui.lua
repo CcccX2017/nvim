@@ -63,6 +63,17 @@ return {
       current_line_blame = true,
     },
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = function(_, opts)
+      local icon = require("utils.icons")
+      opts.options.component_separators = {
+        left = icon.left,
+        right = icon.right,
+      }
+    end,
+  },
   -- {
   --   "nvim-telescope/telescope.nvim",
   --   dependencies = {
