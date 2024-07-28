@@ -9,6 +9,19 @@ return {
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
 
+      local is_java_project = require("utils.project").is_java_project()
+      local is_update_cwd = function()
+        -- if not vim.g.project_enabled then
+        --   return false
+        -- end
+        --
+        -- if is_java_project then
+        --   return false
+        -- end
+
+        return true
+      end
+
       local icon = require("utils.icons")
       require("nvim-tree").setup({
         view = {
@@ -68,13 +81,13 @@ return {
           timeout = 400,
           cygwin_support = false,
         },
-        sync_root_with_cwd = true,
+        sync_root_with_cwd = is_update_cwd(),
         respect_buf_cwd = true,
         update_cwd = true,
         update_focused_file = {
           enable = true,
           update_cwd = true,
-          update_root = true,
+          update_root = is_update_cwd(),
           exclude = false,
         },
         hijack_directories = {

@@ -47,4 +47,11 @@ function M.is_java_project()
   return false ]]
 end
 
+function M.is_project_enabled()
+  if vim.g.project_enabled then
+    return { import = "lazyvim.plugins.extras.util.project" }
+  end
+  return nil
+end
+
 return M

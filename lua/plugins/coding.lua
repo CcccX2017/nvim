@@ -75,9 +75,57 @@ return {
   },
   {
     "ahmedkhalf/project.nvim",
-    opts = {
-      manual_mode = false,
-    },
+    enabled = vim.g.project_enabled,
+    opts = function(_, opts)
+      opts.manual_mode = false
+      opts.detection_methods = { "pattern", "lsp" }
+      opts.patterns = {
+        ".git",
+        "_darcs",
+        ".hg",
+        ".bzr",
+        ".svn",
+        "Makefile",
+        "package.json",
+        -- ".idea",
+        -- ".settings",
+        -- "pom.xml",
+        -- "build.gradle",
+      }
+
+      local function is_in_patterns()
+        local cwd = vim.fn.getcwd()
+        -- 遍历每个模式，检查是否存在匹配的文件或目录
+        for _, existing_pattern in ipairs(opts.patterns) do
+          if vim.fn.glob(cwd .. "/" .. existing_pattern) ~= "" then
+            return true -- 找到匹配的文件或目录
+          end
+        end
+
+        return false
+      end
+
+      local function pattern_exists(pattern)
+        for _, existing_pattern in ipairs(opts.patterns) do
+          if existing_pattern == pattern then
+            return true
+          end
+        end
+        return false
+      end
+
+      -- 如果patterns中的目录无法匹配，则添加当前目录为父目录
+      vim.api.nvim_create_autocmd({ "BufEnter" }, {
+        callback = function()
+          if not is_in_patterns() then
+            local root_path = "=" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+            if not pattern_exists(root_path) then
+              table.insert(opts.patterns, 1, root_path)
+            end
+          end
+        end,
+      })
+    end,
   },
   {
     "numToStr/Comment.nvim",
