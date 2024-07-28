@@ -25,7 +25,7 @@ return {
     opts = function()
       require("bufdel").setup({
         next = "tabs",
-        quit = true,
+        quit = false,
       })
     end,
   },
