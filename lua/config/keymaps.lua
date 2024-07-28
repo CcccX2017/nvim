@@ -67,3 +67,5 @@ map("n", "<M-up>", ":res +5<cr>", opts)
 map("n", "<M-down>", ":res -5<cr>", opts)
 map("n", "<M-left>", ":vertical resize-5<cr>", opts)
 map("n", "<M-right>", ":vertical resize+5<cr>", opts)
+
+map("v", "c", '"_c', opts)

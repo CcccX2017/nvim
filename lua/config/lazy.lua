@@ -33,6 +33,7 @@ require("lazy").setup({
     -- editor
     { import = "lazyvim.plugins.extras.editor.mini-files" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    -- { import = "lazyvim.plugins.extras.editor.harpoon2" }, -- 快速文件菜单
     -- coding
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },

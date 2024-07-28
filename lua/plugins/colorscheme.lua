@@ -49,15 +49,17 @@ return {
             }
 
             hl.TreesitterContext = {
-              bg = bg_highlight,
+              -- bg = c.none,
+              bg = bg_dark,
+            }
+
+            hl.TreesitterContextLineNumber = {
+              fg = "#f5e0dc",
             }
 
             hl.FloatBorder = {
               bg = c.none,
               fg = c.todo,
-            }
-            hl.TreesitterContextLineNumber = {
-              fg = "#f5e0dc",
             }
             hl.LazyH1 = {
               bg = c.none,
