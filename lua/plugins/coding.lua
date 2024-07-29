@@ -134,7 +134,7 @@ return {
   },
   {
     "numToStr/Comment.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = true,
   },
 }

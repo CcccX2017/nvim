@@ -49,12 +49,11 @@ return {
             }
 
             hl.TreesitterContext = {
-              -- bg = c.none,
-              bg = bg_dark,
+              bg = bg_highlight,
             }
 
             hl.TreesitterContextLineNumber = {
-              fg = "#f5e0dc",
+              fg = "#f1faee",
             }
 
             hl.FloatBorder = {
