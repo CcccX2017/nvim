@@ -74,6 +74,47 @@ return {
       }
     end,
   },
+  -- 右上角浮动显示当前文件名
+  {
+    "b0o/incline.nvim",
+    event = "BufReadPre",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    priority = 1200,
+    config = function()
+      local helpers = require("incline.helpers")
+      require("incline").setup({
+        window = {
+          padding = 0,
+          margin = { horizontal = 0 },
+        },
+        hide = {
+          cursorline = true,
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if filename == "" then
+            filename = "[No Name]"
+          end
+          local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
+          local modified = vim.bo[props.buf].modified
+          if modified then
+            filename = "[+] " .. filename
+          end
+
+          local buffer = {
+            ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or " ",
+            " ",
+            { filename, gui = modified and "bold,italic" or "bold" },
+            " ",
+            guibg = "#363944",
+          }
+          return buffer
+        end,
+      })
+    end,
+  },
 
   -- {
   --   "nvim-telescope/telescope.nvim",
