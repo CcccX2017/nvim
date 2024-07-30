@@ -16,7 +16,7 @@ return {
       local fg_gutter = "#627E97"
       local border = "#547998"
       require("tokyonight").setup({
-        style = "storm",
+        style = "moon",
         transparent = transparent,
         styles = {
           functions = { italic = true },
@@ -75,7 +75,21 @@ return {
             hl.LazySpecial = {
               fg = "#a6e3a1",
             }
+
+            hl.TelescopeResultsDiffChange = {
+              bg = c.none,
+              fg = "#ffffff",
+            }
           end
+
+          hl.TelescopePromptBorder = {
+            fg = c.bg_float,
+            bg = c.none,
+          }
+          hl.TelescopePromptTitle = {
+            fg = c.bg_float,
+            bg = c.none,
+          }
 
           hl.EndOfBuffer = {
             fg = bg,
@@ -96,6 +110,7 @@ return {
 
           hl.CursorLineNr = {
             fg = "#F1FAEE",
+            bg = c.none,
           }
         end,
       })

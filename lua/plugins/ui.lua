@@ -123,6 +123,11 @@ return {
       extensions = {
         file_browser = {
           theme = "dropdown",
+          respect_gitignore = false,
+          hidden = true,
+          grouped = false,
+          previewer = false,
+          initial_mode = "normal",
         },
       },
       pickers = {
@@ -132,6 +137,10 @@ return {
         },
         live_grep = {
           theme = "dropdown",
+        },
+        buffers = {
+          theme = "dropdown",
+          previewer = false,
         },
       },
     },
@@ -146,7 +155,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        "sf",
+        "<leader>sB",
         function()
           local telescope = require("telescope")
 
@@ -155,17 +164,11 @@ return {
           end
 
           telescope.extensions.file_browser.file_browser({
-            path = "%:p:h",
+            path = "%:p:h=%:p:h",
             cwd = telescope_buffer_dir(),
-            respect_gitignore = false,
-            hidden = true,
-            grouped = false,
-            previewer = false,
-            initial_mode = "normal",
-            -- layout_config = { height = 40 },
           })
         end,
-        desc = "Open File Browser with the path of the current buffer",
+        desc = "File Browser",
       },
     },
   },
