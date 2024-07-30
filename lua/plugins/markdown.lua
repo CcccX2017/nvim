@@ -27,4 +27,14 @@ return {
       })
     end,
   },
+  {
+    -- 增强笔记文件显示，markdown, orgmode, neorg
+    -- show latex on markdown file can use plugin "jbyuki/nabla.nvim"
+    "lukas-reineke/headlines.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+    -- config = function()
+    --   require("headlines").setup()
+    -- end,
+  },
 }

@@ -76,7 +76,32 @@ return {
             vim.api.nvim_set_current_win(window_number)
           end
         end,
+        desc = "Windows Picker 快速切换面板",
       },
     },
+  },
+  {
+    "nacro90/numb.nvim",
+    event = "BufRead",
+    opts = {
+      show_numbers = true,
+      show_cursorline = true,
+    },
+  },
+  {
+    "AndrewRadev/switch.vim",
+    keys = {
+      {
+        "sw",
+        "<cmd>Switch<cr>",
+        desc = "Switch Segments",
+      },
+    },
+    config = function() end,
+  },
+  {
+    -- 多光标支持
+    "mg979/vim-visual-multi",
+    config = function() end,
   },
 }

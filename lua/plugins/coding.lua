@@ -137,4 +137,53 @@ return {
     event = "BufReadPost",
     config = true,
   },
+  {
+    "rmagatti/goto-preview",
+    lazy = true,
+    -- event = "BufEnter",
+    keys = {
+      {
+        "gp",
+        "-",
+        desc = "Goto Preview",
+      },
+      {
+        "gpd",
+        "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+        desc = "Definition Preview",
+      },
+      {
+        "gpt",
+        "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+        desc = "Type Definition Preview",
+      },
+      {
+        "gpi",
+        "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+        desc = "Implementation Preview",
+      },
+      {
+        "gpD",
+        "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>",
+        desc = "Declaration Preview",
+      },
+      {
+        "gpr",
+        "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+        desc = "References Preview",
+      },
+      {
+        "gpC",
+        "<cmd>lua require('goto-preview').close_all_win()<CR>",
+        desc = "Close All Preview Win",
+      },
+    },
+    config = true,
+  },
+  {
+    -- plugin for live html, css, and javascript editing in vim
+    "turbio/bracey.vim",
+    cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+    build = "npm install --prefix server",
+  },
 }
