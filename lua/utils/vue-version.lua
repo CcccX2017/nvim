@@ -17,7 +17,7 @@ local function is_vue3()
   local package = vim.fn.json_decode(content)
 
   local vue_version = package.dependencies and package.dependencies.vue
-    or package.devDependencies and package.devDependencied.vue
+    or package.devDependencies and package.devDependencies.vue
 
   if vue_version then
     local major_version = vue_version:match("%^?(%d)")
