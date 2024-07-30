@@ -172,4 +172,14 @@ return {
       },
     },
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      extensions = {
+        "nvim-tree",
+        "mason",
+        "toggleterm",
+      },
+    },
+  },
 }

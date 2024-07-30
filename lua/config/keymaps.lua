@@ -4,7 +4,9 @@ local opts = { noremap = true, silent = true }
 -- jk回到normal模式
 map("i", "jk", "<esc>", { desc = "jk回到normal模式" })
 
-map({ "n", "v" }, "x", '"_x')
+map({ "n", "v" }, "x", '"_x', { desc = "x不覆盖剪切板" })
+
+map({ "v" }, "p", '"_dP', { desc = "Visual模式下粘贴内容不覆盖剪切板" })
 
 -- leader w 保存
 map("n", "<leader>w", "<cmd>w<cr><esc>", opts)
