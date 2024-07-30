@@ -22,3 +22,7 @@ opt.cmdheight = 0
 
 vim.g.neotree_enabled = false
 vim.g.project_enabled = true
+
+if vim.uv.os_uname().sysname == "Windows_NT" then
+  vim.g.editorconfig = false
+end
