@@ -28,13 +28,33 @@ return {
     end,
   },
   {
-    -- 增强笔记文件显示，markdown, orgmode, neorg
-    -- show latex on markdown file can use plugin "jbyuki/nabla.nvim"
-    "lukas-reineke/headlines.nvim",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = true,
-    -- config = function()
-    --   require("headlines").setup()
-    -- end,
+    "MeanderingProgrammer/markdown.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    ft = { "markdown", "norg", "rmd", "org" },
+    opts = {
+      file_types = { "markdown", "norg", "rmd", "org" },
+      heading = {
+        width = "full",
+        position = "overlay",
+        icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+        -- icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
+      },
+      code = {
+        sign = true,
+        style = "full",
+        border = "thin",
+        right_pad = 1,
+      },
+    },
+    keys = {
+      {
+        "<leader>um",
+        "<cmd>RenderMarkdown toggle<cr>",
+        desc = "RenderMarkdown Toggle",
+      },
+    },
   },
 }
