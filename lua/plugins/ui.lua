@@ -155,7 +155,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        "<leader>sB",
+        "<leader>sf",
         function()
           local telescope = require("telescope")
 

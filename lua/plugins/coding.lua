@@ -181,9 +181,14 @@ return {
     config = true,
   },
   {
-    -- plugin for live html, css, and javascript editing in vim
-    "turbio/bracey.vim",
-    cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
-    build = "npm install --prefix server",
+    -- Live reload local development servers inside of neovim
+    "barrett-ruth/live-server.nvim",
+    build = function()
+      local has_pnpm = vim.fn.executable("pnpm") == 1
+      local package_manager = has_pnpm and "pnpm" or "npm"
+      os.execute(package_manager .. " add -g live-server")
+    end,
+    cmd = { "LiveServerStart", "LiveServerStop", "LiveServerToggle" },
+    config = true,
   },
 }
