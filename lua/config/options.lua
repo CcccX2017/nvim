@@ -1,6 +1,12 @@
 local opt = vim.opt
 -- set nvim-navic silence
 vim.g.navic_silence = true
+vim.g.neotree_enabled = false
+vim.g.project_enabled = true
+
+-- if vim.uv.os_uname().sysname == "Windows_NT" then
+--   vim.g.editorconfig = false
+-- end
 
 vim.g.transparent_enabled = true
 if vim.g.transparent_enabled then
@@ -9,6 +15,7 @@ if vim.g.transparent_enabled then
 end
 
 opt.swapfile = false
+opt.backup = false
 opt.backspace = "indent,eol,start"
 
 opt.fillchars = {
@@ -20,9 +27,4 @@ opt.mousemoveevent = true
 
 opt.cmdheight = 0
 
-vim.g.neotree_enabled = false
-vim.g.project_enabled = true
-
--- if vim.uv.os_uname().sysname == "Windows_NT" then
---   vim.g.editorconfig = false
--- end
+opt.autoindent = true
