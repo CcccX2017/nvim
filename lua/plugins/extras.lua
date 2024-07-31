@@ -41,7 +41,6 @@ return {
   {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",
-    event = "VeryLazy",
     version = "2.*",
     opts = {
       hint = "floating-big-letter",
@@ -97,11 +96,6 @@ return {
         desc = "Switch Segments",
       },
     },
-    config = function() end,
-  },
-  {
-    -- 多光标支持
-    "mg979/vim-visual-multi",
     config = function() end,
   },
 }

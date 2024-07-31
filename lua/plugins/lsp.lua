@@ -19,6 +19,7 @@ return {
         "vtsls",
         "json-lsp",
         "lemminx", -- xml
+        "marksman", -- markdown
         -- formatter
         "prettierd",
         "isort", -- python formatter

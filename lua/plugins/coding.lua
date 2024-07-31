@@ -191,4 +191,8 @@ return {
     cmd = { "LiveServerStart", "LiveServerStop", "LiveServerToggle" },
     config = true,
   },
+  {
+    -- 多光标支持
+    "mg979/vim-visual-multi",
+  },
 }
