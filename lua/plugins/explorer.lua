@@ -19,6 +19,8 @@ return {
 
       local icon = require("utils.icons")
       require("nvim-tree").setup({
+        disable_netrw = true,
+        hijack_cursor = true,
         view = {
           adaptive_size = false,
           centralize_selection = true,

@@ -12,7 +12,7 @@ return {
       ensure_installed = {
         -- lsp
         -- "html-lsp",
-        "emmet-ls",
+        -- "emmet-ls",
         "css-lsp",
         "pyright",
         "vue-language-server",
@@ -43,6 +43,9 @@ return {
         "gitignore",
         "svelte",
       },
+      indent = {
+        enable = true,
+      },
     },
   },
   {
@@ -57,7 +60,6 @@ return {
       -- 配置lemminx-maven
       local lemminx_home = vim.env["LEMMINX_HOME"]
       if lemminx_home then
-        local lspconfig = require("lspconfig")
         local common = require("utils.common")
 
         local lemminx_jars = {}
@@ -66,25 +68,15 @@ return {
         end
         vim.fn.join(lemminx_jars, common.is_win and ";" or ":")
 
-        local config = vim.tbl_deep_extend("keep", {
+        opts.servers.lemminx = {
           cmd = {
             "java",
             "-cp",
             vim.fn.join(lemminx_jars, ":"),
             "org.eclipse.lemminx.XMLServerLauncher",
           },
-        }, opts)
-        lspconfig["lemminx"].setup(config)
+        }
       end
     end,
-  },
-  {
-    "stevearc/conform.nvim",
-    -- optional = true,
-    opts = {
-      formatters_by_ft = {
-        ["xml"] = { "xmlformatter" },
-      },
-    },
   },
 }

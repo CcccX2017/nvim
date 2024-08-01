@@ -29,13 +29,8 @@ return {
       opts.mapping["<Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif luasnip.expand_or_locally_jumpable() then
+        elseif luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
-        elseif M.jumpable(1) then
-          luasnip.jump(1)
-        elseif M.has_words_before() then
-          -- cmp.complete()
-          fallback()
         else
           fallback()
         end
@@ -194,5 +189,28 @@ return {
   {
     -- 多光标支持
     "mg979/vim-visual-multi",
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {
+      fast_wrap = {
+        map = "<M-e>",
+        chars = { "{", "[", "(", '"', "'" },
+        pattern = [=[[%'%"%>%]%)%}%,]]=],
+        end_key = "$",
+        keys = "qwertyuiopzxcvbnmasdfghjkl",
+        check_comma = true,
+        highlight = "Search",
+        highlight_grey = "Comment",
+      },
+      disable_filetype = { "TelescopePrompt", "vim" },
+    },
+    config = function(_, opts)
+      require("nvim-autopairs").setup(opts)
+
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+    end,
   },
 }
