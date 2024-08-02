@@ -213,4 +213,36 @@ return {
       require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = {
+      { "<leader>cs", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    },
+    config = function()
+      local defaults = require("outline.config").defaults
+      local icons = require("utils.icons")
+
+      local opts = {
+        symbols = {
+          icons = {},
+          filter = nil,
+        },
+        keymaps = {
+          up_and_jump = "<up>",
+          down_and_jump = "<down>",
+        },
+      }
+
+      for kind, symbol in pairs(defaults.symbols.icons) do
+        opts.symbols.icons[kind] = {
+          icon = icons.kind[kind] or symbol.icon,
+          hl = symbol.hl,
+        }
+      end
+
+      require("outline").setup(opts)
+    end,
+  },
 }

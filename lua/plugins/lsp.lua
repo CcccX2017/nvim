@@ -45,6 +45,7 @@ return {
       },
       indent = {
         enable = true,
+        disable = { "xml" },
       },
     },
   },
@@ -78,5 +79,47 @@ return {
         }
       end
     end,
+  },
+  {
+    "nvimdev/lspsaga.nvim",
+    event = "LazyFile",
+    keys = {
+      -- {
+      --   "<leader>cs",
+      --   "<cmd>Lspsaga outline<cr>",
+      --   desc = "Toggle Outline",
+      -- },
+    },
+    opts = {
+      ui = {
+        border = "rounded",
+        lines = { "└", "├", "│", "─", "┌" },
+        expand = "",
+        collapse = "",
+      },
+      symbol_in_winbar = {
+        enable = true,
+      },
+      lightbulb = {
+        sign = false,
+      },
+      outline = {
+        win_position = "right",
+        win_width = 30,
+        detail = true,
+        layout = "normal",
+      },
+    },
+    config = function(_, opts)
+      require("lspsaga").setup(opts)
+
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Lspsaga hover doc" }
+      keys[#keys + 1] = { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Code Action" }
+    end,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
   },
 }

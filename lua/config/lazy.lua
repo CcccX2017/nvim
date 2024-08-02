@@ -35,7 +35,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.editor.refactoring" }, -- 重构
     -- { import = "lazyvim.plugins.extras.editor.harpoon2" }, -- 快速文件菜单
-    { import = "lazyvim.plugins.extras.editor.outline" },
     -- coding
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },

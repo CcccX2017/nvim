@@ -11,6 +11,7 @@ if not vim.g.neotree_enabled then
   api.nvim_create_autocmd("FileType", {
     pattern = {
       "NvimTree",
+      "Outline",
     },
     callback = function()
       vim.b.miniindentscope_disable = true

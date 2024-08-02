@@ -1,15 +1,16 @@
 local opt = vim.opt
+local g = vim.g
 -- set nvim-navic silence
-vim.g.navic_silence = true
-vim.g.neotree_enabled = false
-vim.g.project_enabled = true
+g.navic_silence = true
+g.neotree_enabled = false
+g.project_enabled = true
 
 -- if vim.uv.os_uname().sysname == "Windows_NT" then
---   vim.g.editorconfig = false
+--   g.editorconfig = false
 -- end
 
-vim.g.transparent_enabled = true
-if vim.g.transparent_enabled then
+g.transparent_enabled = true
+if g.transparent_enabled then
   opt.winblend = 0
   opt.pumblend = 0
 end
