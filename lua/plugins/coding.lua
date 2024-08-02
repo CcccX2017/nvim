@@ -142,16 +142,16 @@ return {
         "-",
         desc = "Goto Preview",
       },
-      {
-        "gpd",
-        "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-        desc = "Definition Preview",
-      },
-      {
-        "gpt",
-        "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
-        desc = "Type Definition Preview",
-      },
+      -- {
+      --   "gpd",
+      --   "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+      --   desc = "Definition Preview",
+      -- },
+      -- {
+      --   "gpt",
+      --   "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+      --   desc = "Type Definition Preview",
+      -- },
       {
         "gpi",
         "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",

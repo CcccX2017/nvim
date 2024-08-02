@@ -84,21 +84,29 @@ return {
     "nvimdev/lspsaga.nvim",
     event = "LazyFile",
     keys = {
-      -- {
-      --   "<leader>cs",
-      --   "<cmd>Lspsaga outline<cr>",
-      --   desc = "Toggle Outline",
-      -- },
+      {
+        "gpd",
+        "<cmd>Lspsaga peek_definition<CR>",
+        desc = "Definition Preview",
+      },
+      {
+        "gpt",
+        "<cmd>Lspsaga peek_type_definition<CR>",
+        desc = "Type Definition Preview",
+      },
+      {
+        "<leader>f,",
+        "<cmd>Lspsaga finder def+ref+imp ++inexist<cr>",
+        desc = "Show LSP Methods",
+      },
     },
     opts = {
       ui = {
         border = "rounded",
         lines = { "└", "├", "│", "─", "┌" },
-        expand = "",
-        collapse = "",
       },
       symbol_in_winbar = {
-        enable = true,
+        enable = false,
       },
       lightbulb = {
         sign = false,
