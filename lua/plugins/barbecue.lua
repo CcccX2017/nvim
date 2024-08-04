@@ -5,7 +5,7 @@ return {
     name = "barbecue",
     enabled = true,
     version = "*",
-    event = "VeryLazy",
+    event = "LazyFile",
     dependencies = {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency

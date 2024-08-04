@@ -57,6 +57,9 @@ return {
           hybridMode = require("utils.vue-version").setup_volar_hybrid_mode() == true,
         },
       }
+      opts.codelens = {
+        enabled = true,
+      }
 
       -- 配置lemminx-maven
       local lemminx_home = vim.env["LEMMINX_HOME"]
@@ -83,6 +86,7 @@ return {
   {
     "nvimdev/lspsaga.nvim",
     event = "LazyFile",
+    enabled = true,
     keys = {
       {
         "gpd",

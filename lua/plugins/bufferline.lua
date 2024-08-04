@@ -1,6 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  event = "VeryLazy",
+  event = "LazyFile",
   opts = {
     options = {
       separator_style = { "", "" },
