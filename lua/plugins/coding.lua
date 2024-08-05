@@ -47,7 +47,11 @@ return {
       end, { "i", "s" })
 
       cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
+        mapping = cmp.mapping.preset.cmdline({
+          ["<CR>"] = {
+            c = cmp.mapping.confirm({ select = false }),
+          },
+        }),
         sources = cmp.config.sources({
           { name = "path" },
         }, {
@@ -65,6 +69,14 @@ return {
         sources = {
           { name = "buffer" },
         },
+      })
+
+      -- 关闭一些path补全
+      cmp.setup.filetype({ "html", "vue" }, {
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+        }),
       })
     end,
   },

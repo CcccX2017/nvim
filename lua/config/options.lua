@@ -20,7 +20,7 @@ opt.backup = false
 opt.backspace = "indent,eol,start"
 
 opt.fillchars = {
-  vert = " ", -- Remove vertical line
+  -- vert = " ", -- Remove vertical line
   eob = " ", -- 取消空行显示波浪线
 }
 

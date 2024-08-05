@@ -2,6 +2,10 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:nvim-java/mason-registry",
+      },
       ui = {
         icons = {
           package_installed = "✓",
@@ -11,17 +15,19 @@ return {
       },
       ensure_installed = {
         -- lsp
-        -- "html-lsp",
-        -- "emmet-ls",
+        "html-lsp",
+        "emmet-ls",
         "css-lsp",
         "pyright",
         "vue-language-server",
         "vtsls",
         "json-lsp",
-        -- "lemminx", -- xml
+        "lemminx", -- xml
         "marksman", -- markdown
+        "spring-boot-tools",
+        "jdtls",
         -- formatter
-        "prettierd",
+        -- "prettierd",
         "isort", -- python formatter
         "black", -- python formatter
         -- "xmlformatter",
@@ -42,6 +48,7 @@ return {
         "dockerfile",
         "gitignore",
         "svelte",
+        "java",
       },
       indent = {
         enable = true,
@@ -56,9 +63,6 @@ return {
         vue = {
           hybridMode = require("utils.vue-version").setup_volar_hybrid_mode() == true,
         },
-      }
-      opts.codelens = {
-        enabled = true,
       }
 
       -- 配置lemminx-maven

@@ -1,51 +1,21 @@
--- return {
---   "nvim-java/nvim-java",
---   config = false,
---   dependencies = {
---     {
---       "neovim/nvim-lspconfig",
---       opts = {
---         inlay_hints = {
---           enabled = true,
---           exclude = {
---             -- 'java',
---             -- 'javascript',
---             -- 'typescript',
---             -- 'javascriptreact',
---             -- 'typescriptreact',
---           },
---         },
---         servers = {
---           jdtls = {
---             -- your jdtls configuration goes here
---             settings = {
---               java = {},
---               inlayhints = {
---                 parameterNames = { enabled = "all" },
---               },
---               referenceCodeLens = { enabled = true },
---               implementationsCodeLens = { enabled = true },
---             },
---           },
---         },
---         setup = {
---           jdtls = function()
---             require("java").setup({
---               -- your nvim-java configuration goes here
---             })
---           end,
---         },
---       },
---     },
---   },
--- }
 return {
   {
     "mfussenegger/nvim-jdtls",
     dependencies = {
       "JavaHello/spring-boot.nvim",
+      "ibhagwan/fzf-lua",
     },
     opts = function(_, opts)
+      require("fzf-lua").setup({})
+
+      local ls_path = require("mason-registry").get_package("spring-boot-tools"):get_install_path()
+        .. "/extension/language-server"
+      require("spring_boot").setup({
+        ls_path = ls_path,
+      })
+
+      local bundles = require("utils.project").get_jdtls_bundles(opts)
+
       opts.jdtls = {
         handlers = {
           ["$/progress"] = function(_, result, ctx)
@@ -56,39 +26,14 @@ return {
             return vim.lsp.handlers["$/progress"](_, result, ctx)
           end,
         },
-        -- init_options = {
-        --   bundles = {},
-        -- },
+        init_options = {
+          bundles = bundles,
+        },
       }
-      opts.settings.inlayhints = {
-        parameterNames = { enabled = "ALL" },
-      }
-      opts.settings.referenceCodeLens = { enabled = true }
-      opts.settings.implementationsCodeLens = { enabled = true }
 
-      -- 添加 spring-boot jdtls 扩展 jar 包
-      -- vim.list_extend(opts.jdtls.init_options.bundles, require("spring_boot").java_extensions())
-      -- vim.notify(vim.inspect(opts))
-      -- table.insert(opts.jdtls.init_options.bundles, require("spring_boot").java_extensions())
+      opts.settings.java.referenceCodeLens = { enabled = true }
+      opts.settings.java.implementationsCodeLens = { enabled = true }
     end,
-    -- opts = {
-    --   jdtls = {
-    --     handlers = {
-    --       ["$/progress"] = function(_, result, ctx)
-    --         local message = result.value.message or ""
-    --         if message:lower():find("validate documents") or message:lower():find("publish diagnostics") then
-    --           return
-    --         end
-    --         return vim.lsp.handlers["$/progress"](_, result, ctx)
-    --       end,
-    --     },
-    --     init_options = {
-    --       bundles = {
-    --
-    --       }
-    --     }
-    --   },
-    -- },
   },
   {
     "elmcgill/springboot-nvim",
