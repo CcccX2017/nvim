@@ -97,7 +97,7 @@ function M.setup()
           fg = c.blue,
         },
         TelescopeBorder = {
-          fg = transparent and c.none or c.lavender,
+          fg = c.lavender,
           bg = c.none,
         },
         DiffChange = {

@@ -198,4 +198,12 @@ return {
     cmd = { "LiveServerStart", "LiveServerStop", "LiveServerToggle" },
     config = true,
   },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        -- lua = { "luacheck" },
+      },
+    },
+  },
 }

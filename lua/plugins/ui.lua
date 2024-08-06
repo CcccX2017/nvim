@@ -1,5 +1,24 @@
 return {
   {
+    "nvim-tree/nvim-web-devicons",
+    opts = {
+      override = {
+        deb = { icon = "", name = "Deb" },
+        lock = { icon = "󰌾", name = "Lock" },
+        mp3 = { icon = "󰎆", name = "Mp3" },
+        mp4 = { icon = "", name = "Mp4" },
+        out = { icon = "", name = "Out" },
+        ["robots.txt"] = { icon = "󰚩", name = "Robots" },
+        ttf = { icon = "", name = "TrueTypeFont" },
+        rpm = { icon = "", name = "Rpm" },
+        woff = { icon = "", name = "WebOpenFontFormat" },
+        woff2 = { icon = "", name = "WebOpenFontFormat2" },
+        xz = { icon = "", name = "Xz" },
+        zip = { icon = "", name = "Zip" },
+      },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = function(_, opts)
       -- opts.lsp.override["cmp.entry.get_documentation"] = false
@@ -115,12 +134,14 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    opts = {
-      extensions = {
+    opts = function(_, opts)
+      vim.list_extend(opts.extensions, {
         "nvim-tree",
         "mason",
         "toggleterm",
-      },
-    },
+      })
+      local component = require("utils.lualine")
+      table.insert(opts.sections.lualine_x, 1, component.lsp)
+    end,
   },
 }

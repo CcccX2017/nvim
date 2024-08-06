@@ -1,6 +1,7 @@
 return {
   left = "",
   right = "",
+  ActiveLSP = " ",
   kind = {
     Array = " ",
     Boolean = " ",
