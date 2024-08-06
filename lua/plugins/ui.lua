@@ -46,7 +46,6 @@ return {
     lazy = false,
     opts = function(_, opts)
       local logo = require("utils.logo").get_logo()
-
       opts.config.header = logo
     end,
   },
