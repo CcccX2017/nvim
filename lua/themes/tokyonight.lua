@@ -87,16 +87,17 @@ local options = {
         bg = c.none,
         fg = "#545c7e",
       }
-    end
 
-    hl.TelescopePromptBorder = {
-      fg = c.bg_float,
-      bg = c.none,
-    }
-    hl.TelescopePromptTitle = {
-      fg = c.bg_float,
-      bg = c.none,
-    }
+      hl.TelescopePromptBorder = {
+        fg = c.bg_float,
+        bg = c.none,
+      }
+
+      hl.TelescopePromptTitle = {
+        fg = c.bg_float,
+        bg = c.none,
+      }
+    end
 
     hl.EndOfBuffer = {
       fg = bg,
@@ -118,6 +119,14 @@ local options = {
     hl.CursorLineNr = {
       fg = "#F1FAEE",
       bg = c.none,
+    }
+
+    hl.TreesitterContext = {
+      bg = transparent and c.none or c.bg,
+    }
+    hl.TreesitterContextSeparator = {
+      bg = c.none,
+      fg = c.fg_gutter,
     }
   end,
 }

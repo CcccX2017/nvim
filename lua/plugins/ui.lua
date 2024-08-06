@@ -114,64 +114,6 @@ return {
     end,
   },
   {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-file-browser.nvim",
-    },
-    opts = {
-      extensions = {
-        file_browser = {
-          theme = "dropdown",
-          respect_gitignore = false,
-          hidden = true,
-          grouped = false,
-          previewer = false,
-          initial_mode = "normal",
-        },
-      },
-      pickers = {
-        find_files = {
-          theme = "dropdown",
-          previewer = false,
-        },
-        live_grep = {
-          theme = "dropdown",
-        },
-        buffers = {
-          theme = "dropdown",
-          previewer = false,
-        },
-      },
-    },
-    keys = {
-      {
-        "<leader>fP",
-        function()
-          require("telescope.builtin").find_files({
-            cwd = require("lazy.core.config").options.root,
-          })
-        end,
-        desc = "Find Plugin File",
-      },
-      {
-        "<leader>sf",
-        function()
-          local telescope = require("telescope")
-
-          local function telescope_buffer_dir()
-            return vim.fn.expand("%:p:h")
-          end
-
-          telescope.extensions.file_browser.file_browser({
-            path = "%:p:h=%:p:h",
-            cwd = telescope_buffer_dir(),
-          })
-        end,
-        desc = "File Browser",
-      },
-    },
-  },
-  {
     "nvim-lualine/lualine.nvim",
     opts = {
       extensions = {

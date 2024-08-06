@@ -47,7 +47,7 @@ function M.setup()
       noice = true,
       notify = true,
       semantic_tokens = true,
-      telescope = { style = transparent and nil or "nvchad" },
+      telescope = transparent,
       treesitter = true,
       treesitter_context = false,
       rainbow_delimiters = true,
@@ -89,15 +89,29 @@ function M.setup()
           bg = c.none,
           fg = c.surface2,
         },
-
         CursorLineNr = {
           fg = "#F1FAEE",
           bg = c.none,
         },
-        TreesitterContext = {
-          bg = "#363944",
-        },
         DashboardIcon = {
+          fg = c.blue,
+        },
+        TelescopeBorder = {
+          fg = transparent and c.none or c.lavender,
+          bg = c.none,
+        },
+        DiffChange = {
+          bg = c.none,
+        },
+        -- TreesitterContext
+        TreesitterContext = {
+          bg = transparent and c.none or c.base,
+        },
+        TreesitterContextSeparator = {
+          bg = c.none,
+          fg = c.surface0,
+        },
+        BufferLineIndicatorSelected = {
           fg = c.blue,
         },
       }
