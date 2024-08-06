@@ -2,8 +2,12 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     dependencies = {
-      "JavaHello/spring-boot.nvim",
-      "ibhagwan/fzf-lua",
+      {
+        "JavaHello/spring-boot.nvim",
+        dependencies = {
+          "ibhagwan/fzf-lua",
+        },
+      },
     },
     opts = function(_, opts)
       require("fzf-lua").setup({})
@@ -31,8 +35,27 @@ return {
         },
       }
 
+      opts.settings.java.inlayHint = {
+        -- enabled = true,
+        parameterNames = { enabled = "all" },
+        -- parameterNames = { enabled = "all" },
+      }
       opts.settings.java.referenceCodeLens = { enabled = true }
       opts.settings.java.implementationsCodeLens = { enabled = true }
+      opts.settings.java.templates = {
+        fileHeader = {
+          "/**",
+          " * ${type_name}",
+          " * @author ${user}",
+          " */",
+        },
+        typeComment = {
+          "/**",
+          " * ${type_name}",
+          " * @author ${user}",
+          " */",
+        },
+      }
     end,
   },
   {
@@ -52,6 +75,16 @@ return {
       vim.keymap.set("n", "<leader>je", springboot_nvim.generate_enum, { desc = "[J]ava Create [E]num" })
 
       springboot_nvim.setup()
+    end,
+  },
+  {
+    "eatgrass/maven.nvim",
+    cmd = { "Maven", "MavenExec" },
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("maven").setup({
+        executable = "./mvnw",
+      })
     end,
   },
 }

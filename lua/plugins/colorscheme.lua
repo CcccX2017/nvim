@@ -80,6 +80,11 @@ return {
               bg = c.none,
               fg = "#ffffff",
             }
+
+            hl.LspInlayHint = {
+              bg = c.none,
+              fg = "#545c7e",
+            }
           end
 
           hl.TelescopePromptBorder = {

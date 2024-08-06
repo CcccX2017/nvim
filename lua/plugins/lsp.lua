@@ -65,6 +65,15 @@ return {
         },
       }
 
+      opts.servers.lua_ls.settings.Lua.hint = {
+        enable = true,
+        setType = false,
+        paramType = true,
+        paramName = "All",
+        semicolon = "Disable",
+        arrayIndex = "Disable",
+      }
+
       -- 配置lemminx-maven
       local lemminx_home = vim.env["LEMMINX_HOME"]
       if lemminx_home then

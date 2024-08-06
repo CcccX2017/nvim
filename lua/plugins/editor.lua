@@ -63,4 +63,16 @@ return {
       require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+    keys = {
+      {
+        "<C-t>",
+        "<cmd>ToggleTerm<cr>",
+        desc = "ToggleTerm",
+      },
+    },
+  },
 }
