@@ -141,7 +141,7 @@ return {
         "toggleterm",
       })
       local component = require("utils.lualine")
-      table.insert(opts.sections.lualine_x, 1, component.lsp)
+      table.insert(opts.sections.lualine_x, 5, component.lsp)
     end,
   },
 }

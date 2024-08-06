@@ -25,16 +25,19 @@ local function list_linters(bufft)
   end
   return registered
 end
-
+local i = 1
 local M = {
   lsp = {
     function()
       local bufft = vim.o.filetype
 
       local file_icon = webicons.get_icon_by_filetype(bufft) or icons.ActiveLSP
+      if not file_icon == icons.ActiveLSP then
+        file_icon = file_icon .. " "
+      end
       local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
       if #buf_clients == 0 then
-        return file_icon .. " LSP Inactive"
+        return file_icon .. "  LSP Inactive"
       end
 
       local bufnr = vim.api.nvim_get_current_buf()
@@ -61,7 +64,7 @@ local M = {
       vim.list_extend(buf_client_names, supported_linters)
 
       local unique_client_names = table.concat(buf_client_names, ", ")
-      local language_servers = file_icon .. " " .. string.format("%s", unique_client_names)
+      local language_servers = file_icon .. "  " .. string.format("%s", unique_client_names)
 
       if copilot_active then
         language_servers = language_servers .. "%#SLCopilot#" .. " " .. icons.kind.Copilot .. "%*"
