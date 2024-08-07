@@ -34,3 +34,8 @@ opt.mousemoveevent = true
 opt.cmdheight = 0
 
 opt.autoindent = true
+
+-- neovide配置
+if g.neovide then
+  vim.notify(g.neovide_version)
+end

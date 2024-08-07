@@ -10,12 +10,13 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    opts = {
-      -- configurations go here
-    },
     config = function()
+      local icons = require("utils.icons")
       require("barbecue").setup({
         create_autocmd = false, -- prevent barbecue from updating itself automatically
+        symbols = {
+          separator = icons.left,
+        },
       })
 
       vim.api.nvim_create_autocmd({
