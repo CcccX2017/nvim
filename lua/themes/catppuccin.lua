@@ -55,6 +55,13 @@ function M.setup()
     },
     custom_highlights = function(c)
       return {
+        Pmenu = {
+          bg = transparent and c.none or c.base,
+        },
+        PmenuSel = {
+          bg = c.green,
+          fg = c.base,
+        },
         PanelHeading = {
           fg = c.lavender,
           bg = transparent and c.none or c.crust,
@@ -76,7 +83,7 @@ function M.setup()
         },
         CmpItemMenu = { fg = c.subtext1 },
         FloatBorder = {
-          fg = transparent and c.blue or c.mantle,
+          fg = transparent and c.lavender or c.mantle,
           bg = transparent and c.none or c.mantle,
         },
 
@@ -94,11 +101,23 @@ function M.setup()
           bg = c.none,
         },
         DashboardIcon = {
-          fg = c.blue,
+          fg = c.teal,
+        },
+        DashboardDesc = {
+          fg = c.teal,
         },
         TelescopeBorder = {
-          fg = c.lavender,
+          fg = c.blue,
           bg = c.none,
+        },
+        TelescopePromptTitle = {
+          fg = c.red,
+        },
+        TelescopeResultsTitle = {
+          fg = c.lavender,
+        },
+        TelescopePreviewTitle = {
+          fg = c.green,
         },
         DiffChange = {
           bg = c.none,

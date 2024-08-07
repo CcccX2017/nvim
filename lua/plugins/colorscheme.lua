@@ -16,9 +16,17 @@ return {
     end,
   },
   {
+    "navarasu/onedark.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("themes.onedark").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "onedark",
     },
   },
 }

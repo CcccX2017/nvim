@@ -11,6 +11,7 @@ local fg = "#CBE0F0"
 local fg_dark = "#B4D0E9"
 local fg_gutter = "#627E97"
 local border = "#547998"
+local bg_sel = "#7aa2f7"
 
 local options = {
   style = "moon",
@@ -47,7 +48,12 @@ local options = {
   on_highlights = function(hl, c)
     if transparent then
       hl.Pmenu = {
-        bg = c.none,
+        bg = transparent and c.none or bg,
+      }
+
+      hl.PmenuSel = {
+        bg = bg_sel,
+        fg = bg_dark,
       }
 
       hl.TreesitterContext = {
@@ -59,9 +65,10 @@ local options = {
       }
 
       hl.FloatBorder = {
-        bg = c.none,
-        fg = c.todo,
+        bg = transparent and c.none or bg,
+        fg = transparent and border or "#589ed7",
       }
+
       hl.LazyH1 = {
         bg = c.none,
         fg = c.blue5,

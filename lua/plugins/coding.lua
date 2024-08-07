@@ -6,6 +6,9 @@ return {
       "hrsh7th/cmp-cmdline",
     },
     opts = function(_, opts)
+      vim.api.nvim_set_hl(0, "CmpSel", { link = "PmenuSel", bold = true })
+      vim.api.nvim_set_hl(0, "CmpBorder", { link = "FloatBorder" })
+
       local cmp = require("cmp")
       local M = require("utils.cmp")
       local cmp_mapping = require("cmp.config.mapping")
@@ -18,11 +21,11 @@ return {
       opts.window = {
         completion = {
           border = M.get_border(),
-          winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:CmpBorder,CursorLine:CmpSel,Search:None",
         },
         documentation = {
           border = M.get_border(),
-          winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          winhighlight = "Normal:Pmenu,FloatBorder:CmpBorder,CursorLine:CmpSel,Search:None",
         },
       }
 

@@ -81,6 +81,10 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
     },
     opts = {
+      defaults = {
+        prompt_prefix = require("utils.icons").ui.Telescope,
+        selection_caret = "󰈺 ",
+      },
       extensions = {
         file_browser = {
           theme = "dropdown",
