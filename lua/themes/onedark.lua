@@ -15,20 +15,6 @@ function M.setup()
     Pmenu = {
       bg = "NONE",
     },
-    NormalFloat = {
-      bg = transparent and "NONE" or c.bg0,
-    },
-    FloatBorder = {
-      bg = transparent and "NONE" or c.bg_d,
-    },
-    CmpBorder = {
-      fg = transparent and c.grey or c.bg_d,
-      bg = "NONE",
-    },
-    FloatTitle = {
-      fg = transparent and "$lavender" or c.bg1,
-      bg = transparent and "NONE" or "$lavender",
-    },
     CursorLineNr = {
       fg = "#white",
       bg = "NONE",
@@ -70,9 +56,14 @@ function M.setup()
     DashboardKey = {
       fg = c.bg_yellow,
     },
-
+    FloatBorder = {
+      bg = "NONE",
+    },
     Visual = {
       bg = c.diff_text,
+    },
+    NormalFloat = {
+      bg = c.bg0,
     },
   }
   if transparent then
@@ -105,7 +96,18 @@ function M.setup()
     }
     highlights["MasonMutedBlock"] = {
       bg = "NONE",
-      fg = "$overlay",
+      fg = "$overlay0",
+    }
+    highlights["NormalFloat"] = {
+      bg = "NONE",
+    }
+    highlights["CmpBorder"] = {
+      fg = c.grey,
+      bg = "NONE",
+    }
+    highlights["FloatTitle"] = {
+      fg = "$lavender",
+      bg = "NONE",
     }
   end
 

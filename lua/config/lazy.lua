@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   ui = {
     backdrop = vim.g.transparent_enabled and 100 or 60,
+    -- border = "rounded",
     border = vim.g.transparent_enabled and "rounded" or "none",
   },
   spec = {

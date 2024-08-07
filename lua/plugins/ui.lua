@@ -144,4 +144,5 @@ return {
       table.insert(opts.sections.lualine_x, 5, component.lsp)
     end,
   },
+  { "typicode/bg.nvim", lazy = false },
 }

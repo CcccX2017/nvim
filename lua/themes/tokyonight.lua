@@ -51,11 +51,6 @@ local options = {
         bg = transparent and c.none or bg,
       }
 
-      hl.PmenuSel = {
-        bg = bg_sel,
-        fg = bg_dark,
-      }
-
       hl.TreesitterContext = {
         bg = bg_highlight,
       }
@@ -105,6 +100,11 @@ local options = {
         bg = c.none,
       }
     end
+
+    hl.PmenuSel = {
+      bg = bg_sel,
+      fg = bg_dark,
+    }
 
     hl.EndOfBuffer = {
       fg = bg,

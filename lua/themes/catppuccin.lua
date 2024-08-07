@@ -58,6 +58,9 @@ function M.setup()
         Pmenu = {
           bg = transparent and c.none or c.base,
         },
+        NormalFloat = {
+          bg = transparent and c.none or c.base,
+        },
         PmenuSel = {
           bg = c.green,
           fg = c.base,
@@ -81,10 +84,13 @@ function M.setup()
           fg = transparent and c.lavender or c.base,
           style = { "bold" },
         },
+        LazyNormal = {
+          bg = transparent and c.none or c.mantle,
+        },
         CmpItemMenu = { fg = c.subtext1 },
         FloatBorder = {
-          fg = transparent and c.lavender or c.mantle,
-          bg = transparent and c.none or c.mantle,
+          fg = c.lavender,
+          bg = transparent and c.none or c.base,
         },
 
         FloatTitle = {
