@@ -15,10 +15,11 @@ function M.setup()
     Pmenu = {
       bg = "NONE",
     },
-    CursorLineNr = {
-      fg = "#white",
-      bg = "NONE",
-    },
+    -- CursorLineNr = {
+    --   -- fg = "#white",
+    --   fg = c.cyan,
+    --   bg = "NONE",
+    -- },
     CursorLine = {
       bg = c.bg3,
     },

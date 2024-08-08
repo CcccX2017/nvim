@@ -55,10 +55,6 @@ local options = {
         bg = bg_highlight,
       }
 
-      hl.TreesitterContextLineNumber = {
-        fg = "#f1faee",
-      }
-
       hl.FloatBorder = {
         bg = transparent and c.none or bg,
         fg = transparent and border or "#589ed7",
@@ -123,10 +119,11 @@ local options = {
       italic = true,
     }
 
-    hl.CursorLineNr = {
-      fg = "#F1FAEE",
-      bg = c.none,
-    }
+    -- hl.CursorLineNr = {
+    --   -- fg = "#F1FAEE",
+    --   fg = c.orange,
+    --   bg = c.none,
+    -- }
 
     hl.TreesitterContext = {
       bg = transparent and c.none or c.bg,
@@ -135,6 +132,9 @@ local options = {
       bg = c.none,
       fg = c.fg_gutter,
     }
+    -- hl.TreesitterContextLineNumber = {
+    --   fg = c.orange,
+    -- }
   end,
 }
 

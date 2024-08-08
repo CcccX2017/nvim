@@ -96,14 +96,15 @@ return {
         file_ignore_patterns = { ".git/", "node_modules" },
         prompt_prefix = require("utils.icons").ui.Telescope,
         selection_caret = "󰈺 ",
-        -- layout_config = {
-        --   height = 0.80,
-        --   width = 0.75,
-        --   preview_cutoff = 30,
-        --   horizontal = { preview_width = 0.55 },
-        --   vertical = { width = 0.55, height = 0.9, preview_cutoff = 30 },
-        --   prompt_position = "top",
-        -- },
+        path_display = { "smart" },
+        layout_config = {
+          height = 0.80,
+          width = 0.75,
+          preview_cutoff = 30,
+          horizontal = { preview_width = 0.48 },
+          vertical = { width = 0.55, height = 0.9, preview_cutoff = 30 },
+          -- prompt_position = "top",
+        },
         -- sorting_strategy = "ascending",
       },
       extensions = {
@@ -180,6 +181,20 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     opts = {
       separator = "─",
+    },
+  },
+  {
+    "mbbill/undotree",
+    cmd = { "UndotreeToggle" },
+    config = function() end,
+  },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      icons = {
+        rules = false,
+        mappings = false,
+      },
     },
   },
 }

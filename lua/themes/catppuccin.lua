@@ -102,10 +102,10 @@ function M.setup()
           bg = c.none,
           fg = c.surface2,
         },
-        CursorLineNr = {
-          fg = "#F1FAEE",
-          bg = c.none,
-        },
+        -- CursorLineNr = {
+        --   fg = c.lavender,
+        --   bg = c.none,
+        -- },
         DashboardIcon = {
           fg = c.teal,
         },
