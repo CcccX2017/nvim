@@ -79,14 +79,43 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
+      {
+        "danielfalk/smart-open.nvim",
+        branch = "0.2.x",
+        dependencies = {
+          "kkharji/sqlite.lua",
+          { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        },
+        config = function()
+          require("telescope").load_extension("smart_open")
+        end,
+      },
     },
     opts = {
       defaults = {
+        file_ignore_patterns = { ".git/", "node_modules" },
         prompt_prefix = require("utils.icons").ui.Telescope,
         selection_caret = "󰈺 ",
+        -- layout_config = {
+        --   height = 0.80,
+        --   width = 0.75,
+        --   preview_cutoff = 30,
+        --   horizontal = { preview_width = 0.55 },
+        --   vertical = { width = 0.55, height = 0.9, preview_cutoff = 30 },
+        --   prompt_position = "top",
+        -- },
+        -- sorting_strategy = "ascending",
       },
       extensions = {
         file_browser = {
+          theme = "dropdown",
+          respect_gitignore = false,
+          hidden = true,
+          grouped = false,
+          previewer = true,
+          initial_mode = "normal",
+        },
+        smart_open = {
           theme = "dropdown",
           respect_gitignore = false,
           hidden = true,
@@ -134,6 +163,16 @@ return {
           })
         end,
         desc = "File Browser",
+      },
+      {
+        "<leader><leader>",
+        function()
+          require("telescope").extensions.smart_open.smart_open({
+            theme = "dropdown",
+            match_algorithm = "fzf",
+          })
+        end,
+        desc = "Search File By Name",
       },
     },
   },
