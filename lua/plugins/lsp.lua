@@ -88,7 +88,7 @@ return {
 
         opts.servers.lemminx = {
           cmd = {
-            "java",
+            common.java_bin(),
             "-cp",
             vim.fn.join(lemminx_jars, ":"),
             "org.eclipse.lemminx.XMLServerLauncher",

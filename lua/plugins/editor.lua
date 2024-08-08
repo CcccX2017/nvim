@@ -98,7 +98,7 @@ return {
         selection_caret = "󰈺 ",
         path_display = { "smart" },
         layout_config = {
-          height = 0.80,
+          height = 0.85,
           width = 0.75,
           preview_cutoff = 30,
           horizontal = { preview_width = 0.48 },
