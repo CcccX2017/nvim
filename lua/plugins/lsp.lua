@@ -54,6 +54,7 @@ return {
         enable = true,
         disable = { "xml" },
       },
+      auto_install = true,
     },
   },
   {

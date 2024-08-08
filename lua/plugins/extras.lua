@@ -30,15 +30,6 @@ return {
     end,
   },
   {
-    -- 长按jk时加快移动速度
-    "rhysd/accelerated-jk",
-    lazy = true,
-    keys = {
-      { "j", "<Plug>(accelerated_jk_gj)" },
-      { "k", "<Plug>(accelerated_jk_gk)" },
-    },
-  },
-  {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",
     version = "2.*",
