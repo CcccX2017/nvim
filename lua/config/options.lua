@@ -35,7 +35,22 @@ opt.cmdheight = 0
 
 opt.autoindent = true
 
+opt.guifont = { "CaskaydiaMono Nerd Font", "Noto Sans SC", ":h12" }
+
 -- neovide配置
 if g.neovide then
-  vim.notify(g.neovide_version)
+  if g.transparent_enabled then
+    g.neovide_transparency = 0.85
+    g.neovide_floating_shadow = true
+    g.neovide_floating_z_height = 10
+    g.neovide_light_angle_degrees = 45
+    g.neovide_light_radius = 5
+    g.neovide_underline_stroke_scale = 1.0
+    g.neovide_scale_factor = 1.0
+    g.neovide_text_gamma = 0.0
+    g.neovide_text_contrast = 0.5
+    g.neovide_profiler = true
+    g.neovide_input_macos_option_key_is_meta = "only_left"
+    g.neovide_cursor_antialiasing = true
+  end
 end
