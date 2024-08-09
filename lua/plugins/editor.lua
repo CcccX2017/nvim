@@ -79,17 +79,6 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
-      {
-        "danielfalk/smart-open.nvim",
-        branch = "0.2.x",
-        dependencies = {
-          "kkharji/sqlite.lua",
-          { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        },
-        config = function()
-          require("telescope").load_extension("smart_open")
-        end,
-      },
     },
     opts = {
       defaults = {
@@ -109,14 +98,6 @@ return {
       },
       extensions = {
         file_browser = {
-          theme = "dropdown",
-          respect_gitignore = false,
-          hidden = true,
-          grouped = false,
-          previewer = true,
-          initial_mode = "normal",
-        },
-        smart_open = {
           theme = "dropdown",
           respect_gitignore = false,
           hidden = true,
@@ -165,6 +146,13 @@ return {
         end,
         desc = "File Browser",
       },
+    },
+  },
+  {
+    "danielfalk/smart-open.nvim",
+    enabled = require("utils.common").is_win == false,
+    branch = "0.2.x",
+    keys = {
       {
         "<leader><leader>",
         function()
@@ -176,7 +164,15 @@ return {
         desc = "Search File By Name",
       },
     },
+    dependencies = {
+      "kkharji/sqlite.lua",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
+    config = function()
+      require("telescope").load_extension("smart_open")
+    end,
   },
+
   {
     "nvim-treesitter/nvim-treesitter-context",
     opts = {
