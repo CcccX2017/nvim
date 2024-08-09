@@ -33,7 +33,6 @@ return {
   },
   {
     "vidocqh/auto-indent.nvim",
-    event = "LazyFile",
     opts = {},
   },
   {
