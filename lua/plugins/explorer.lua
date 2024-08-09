@@ -24,10 +24,11 @@ return {
         view = {
           adaptive_size = false,
           centralize_selection = true,
-          width = {
-            min = 30,
-            max = 60,
-          },
+          -- width = {
+          --   min = 30,
+          --   max = 60,
+          -- },
+          width = 35,
         },
         sort = {
           sorter = "name",
