@@ -3,9 +3,11 @@ return {
     "mfussenegger/nvim-jdtls",
     dependencies = {
       {
-        "JavaHello/spring-boot.nvim",
-        dependencies = {
-          "ibhagwan/fzf-lua",
+        {
+          "CcccX2017/spring-boot.nvim",
+          dependencies = {
+            "ibhagwan/fzf-lua",
+          },
         },
       },
     },
@@ -16,6 +18,9 @@ return {
         .. "/extension/language-server"
       require("spring_boot").setup({
         ls_path = ls_path,
+        jdtls_name = "jdtls",
+        log_file = nil,
+        java_cmd = nil,
       })
 
       local bundles = require("utils.project").get_jdtls_bundles(opts)
@@ -29,17 +34,40 @@ return {
             end
             return vim.lsp.handlers["$/progress"](_, result, ctx)
           end,
+          -- ["textDocument/inlayHint"] = function(err, result, ctx, config)
+          --   local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
+          --   if #buf_clients == 0 then
+          --     return
+          --   end
+          --
+          --   for _, client in pairs(buf_clients) do
+          --     if client.name ~= "null-ls" and client.name ~= "copilot" and client.name ~= "spring-boot" then
+          --       return vim.lsp.handlers["textDocument/inlayHint"](err, result, ctx, config)
+          --     end
+          --   end
+          --
+          --   -- vim.notify(vim.inspect(ctx.client))
+          --   -- for _, value in ipairs(result) do
+          --   --   vim.notify(vim.inspect(value))
+          --   -- end
+          --   -- local line = result.position.line or 0
+          --   -- result.position.line = result.position.line + 1
+          --   -- vim.notify(vim.inspect(err))
+          --   -- vim.notify(vim.inspect(result))
+          --   -- vim.notify(vim.inspect(ctx))
+          --   -- vim.notify(vim.inspect(config))
+          -- end,
         },
         init_options = {
           bundles = bundles,
         },
       }
 
-      opts.settings.java.inlayHint = {
-        -- enabled = true,
-        parameterNames = { enabled = "all" },
+      opts.settings.java.inlayHints = {
+        parameterNames = { enabled = "literals" },
         -- parameterNames = { enabled = "all" },
       }
+      opts.settings.java.signatureHelp = { enabled = true }
       opts.settings.java.referenceCodeLens = { enabled = true }
       opts.settings.java.implementationsCodeLens = { enabled = true }
       opts.settings.java.templates = {
