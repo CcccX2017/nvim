@@ -39,7 +39,7 @@ local iterm_logo = {
 
 function M.get_logo()
   local term_program = os.getenv("TERM_PROGRAM")
-  if term_program and string.find(term_program:lower(), "iterm") then
+  if not term_program or string.find(term_program:lower(), "iterm") then
     return iterm_logo
   end
 
