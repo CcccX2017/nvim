@@ -4,7 +4,7 @@ return {
     dependencies = {
       {
         {
-          "CcccX2017/spring-boot.nvim",
+          "JavaHello/spring-boot.nvim",
           dependencies = {
             "ibhagwan/fzf-lua",
           },
@@ -21,6 +21,11 @@ return {
         jdtls_name = "jdtls",
         log_file = nil,
         java_cmd = nil,
+        server = {
+          handlers = {
+            ["textDocument/inlayHint"] = function() end,
+          },
+        },
       })
 
       local bundles = require("utils.project").get_jdtls_bundles(opts)
