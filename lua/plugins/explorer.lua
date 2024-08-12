@@ -2,6 +2,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     event = "VeryLazy",
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },

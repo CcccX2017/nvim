@@ -48,6 +48,17 @@ return {
       opts.settings.java.inlayHints = {
         parameterNames = { enabled = "all" },
       }
+      opts.settings.java.import = {
+        gradle = { enabled = true },
+        maven = { enabled = true },
+        exclusions = {
+          "**/node_modules/**",
+          "**/.metadata/**",
+          "**/archetype-resources/**",
+          "**/META-INF/maven/**",
+          "**/.git/**",
+        },
+      }
       opts.settings.java.signatureHelp = { enabled = true }
       opts.settings.java.referenceCodeLens = { enabled = true }
       opts.settings.java.implementationsCodeLens = { enabled = true }
@@ -65,6 +76,16 @@ return {
           " */",
         },
       }
+      opts.settings.java.eclipse = {
+        downloadSources = true,
+      }
+      opts.settings.java.maven = {
+        downloadSources = true,
+        updateSnapshots = true,
+      }
+      opts.settings.java.project = { encoding = "UTF-8" }
+      opts.settings.java.foldingRange = { enabled = true }
+      opts.settings.java.selectionRange = { enabled = true }
     end,
   },
   {
