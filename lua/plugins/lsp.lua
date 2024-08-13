@@ -84,13 +84,14 @@ return {
         for _, bundle in ipairs(vim.split(vim.fn.glob(lemminx_home .. "/*.jar"), "\n")) do
           table.insert(lemminx_jars, bundle)
         end
-        vim.fn.join(lemminx_jars, common.is_win and ";" or ":")
+
+        local lemminxStr = vim.fn.join(lemminx_jars, common.is_win and ";" or ":")
 
         opts.servers.lemminx = {
           cmd = {
             common.java_bin(),
             "-cp",
-            vim.fn.join(lemminx_jars, ":"),
+            lemminxStr,
             "org.eclipse.lemminx.XMLServerLauncher",
           },
         }
