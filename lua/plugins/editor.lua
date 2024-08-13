@@ -79,6 +79,27 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
+      {
+        "danielfalk/smart-open.nvim",
+        enabled = require("utils.common").is_win == false,
+        branch = "0.2.x",
+        dependencies = {
+          "kkharji/sqlite.lua",
+          { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        },
+        config = function()
+          require("telescope").load_extension("smart_open")
+          local common = require("utils.common")
+          if not common.is_win then
+            vim.keymap.set("n", "<leader><space>", function()
+              require("telescope").extensions.smart_open.smart_open({
+                theme = "dropdown",
+                match_algorithm = "fzf",
+              })
+            end, { desc = "Find File By Name", silent = true, noremap = true })
+          end
+        end,
+      },
     },
     opts = {
       defaults = {
@@ -106,19 +127,6 @@ return {
           initial_mode = "normal",
         },
       },
-      -- pickers = {
-      --   find_files = {
-      --     theme = "dropdown",
-      --     previewer = true,
-      --   },
-      --   live_grep = {
-      --     theme = "dropdown",
-      --   },
-      --   buffers = {
-      --     theme = "dropdown",
-      --     previewer = false,
-      --   },
-      -- },
     },
     keys = {
       {
@@ -148,31 +156,6 @@ return {
       },
     },
   },
-  {
-    "danielfalk/smart-open.nvim",
-    enabled = require("utils.common").is_win == false,
-    branch = "0.2.x",
-    keys = {
-      {
-        "<leader><leader>",
-        function()
-          require("telescope").extensions.smart_open.smart_open({
-            theme = "dropdown",
-            match_algorithm = "fzf",
-          })
-        end,
-        desc = "Search File By Name",
-      },
-    },
-    dependencies = {
-      "kkharji/sqlite.lua",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    },
-    config = function()
-      require("telescope").load_extension("smart_open")
-    end,
-  },
-
   {
     "nvim-treesitter/nvim-treesitter-context",
     opts = {
