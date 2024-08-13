@@ -131,7 +131,9 @@ return {
             -- "\\.factorypath",
             -- "\\.project",
           },
-          exclude = {},
+          exclude = {
+            ".gitignore",
+          },
         },
         on_attach = require("utils.nvimtree").on_attach,
 
