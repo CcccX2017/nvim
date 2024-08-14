@@ -103,7 +103,7 @@ return {
                 theme = "dropdown",
                 match_algorithm = "fzf",
               })
-            end, { desc = "Find File By Name", silent = true, noremap = true })
+            end, { desc = "Search Files By Name", silent = true, noremap = true })
           end
         end,
       },
