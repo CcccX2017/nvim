@@ -70,13 +70,14 @@ return {
   },
   {
     "hiphish/rainbow-delimiters.nvim",
+    event = "LazyFile",
     config = function()
       require("rainbow-delimiters.setup").setup({})
     end,
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
+    event = "LazyFile",
     opts = {
       current_line_blame = true,
     },
@@ -144,5 +145,5 @@ return {
       table.insert(opts.sections.lualine_x, 5, component.lsp)
     end,
   },
-  { "typicode/bg.nvim", lazy = false },
+  { "typicode/bg.nvim", lazy = false, enabled = vim.g.transparent_enabled == false },
 }

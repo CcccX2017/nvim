@@ -34,7 +34,7 @@ return {
         -- linter
         -- "eslint-lsp",
         "pylint",
-        "luacheck",
+        -- "luacheck",
       },
     },
   },

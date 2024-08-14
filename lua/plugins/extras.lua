@@ -5,7 +5,7 @@ return {
   },
   {
     "ojroques/nvim-bufdel",
-    event = "VeryLazy",
+    cmd = { "BufDelAll", "BufDelOthers", "BufDel" },
     keys = {
       {
         "<leader>ba",

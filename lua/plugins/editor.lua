@@ -33,11 +33,18 @@ return {
   },
   {
     "vidocqh/auto-indent.nvim",
-    opts = {},
+    config = function()
+      require("auto-indent").setup({
+        lightmode = true,
+        indentexpr = nil,
+        ignore_filetype = {},
+      })
+    end,
   },
   {
     -- 多光标支持
     "mg979/vim-visual-multi",
+    event = "LazyFile",
   },
   {
     "windwp/nvim-autopairs",
@@ -178,7 +185,8 @@ return {
   },
   {
     "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    cmd = { "Yazi", "Yazi cwd", "Yazi toggle" },
     keys = {
       -- 👇 in this section, choose your own keymappings!
       {
