@@ -9,7 +9,7 @@ g.project_enabled = true
 --   g.editorconfig = false
 -- end
 
-g.transparent_enabled = true
+g.transparent_enabled = false
 if g.transparent_enabled then
   opt.winblend = 0
   opt.pumblend = 0
