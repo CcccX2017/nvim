@@ -5,11 +5,14 @@ g.navic_silence = true
 g.neotree_enabled = false
 g.project_enabled = true
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- if vim.uv.os_uname().sysname == "Windows_NT" then
 --   g.editorconfig = false
 -- end
 
-g.transparent_enabled = false
+g.transparent_enabled = true
 if g.transparent_enabled then
   opt.winblend = 0
   opt.pumblend = 0

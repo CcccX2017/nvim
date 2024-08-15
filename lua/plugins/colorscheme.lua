@@ -24,7 +24,8 @@ return {
     end,
   },
   {
-    "loctvl842/monokai-pro.nvim",
+    -- "loctvl842/monokai-pro.nvim",
+    "CcccX2017/monokai-pro.nvim",
     lazy = true,
     priority = 1000,
     config = function()
@@ -34,7 +35,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "catppuccin",
     },
   },
 }

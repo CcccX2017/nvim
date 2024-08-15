@@ -15,9 +15,6 @@ return {
       },
     },
     config = function()
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
       local icon = require("utils.icons")
       require("nvim-tree").setup({
         disable_netrw = true,
