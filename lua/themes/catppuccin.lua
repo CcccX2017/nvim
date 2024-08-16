@@ -107,10 +107,10 @@ function M.setup()
         --   bg = c.none,
         -- },
         DashboardIcon = {
-          fg = c.teal,
+          fg = c.lavender,
         },
         DashboardDesc = {
-          fg = c.teal,
+          fg = c.lavender,
         },
         TelescopeBorder = {
           fg = c.blue,

@@ -33,9 +33,17 @@ return {
     end,
   },
   {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("themes.nightfox").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "catppuccin",
     },
   },
 }
