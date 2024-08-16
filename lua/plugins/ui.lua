@@ -91,6 +91,13 @@ return {
         left = icon.left,
         right = icon.right,
       }
+      vim.list_extend(opts.extensions, {
+        "nvim-tree",
+        "mason",
+        "toggleterm",
+      })
+      local component = require("utils.lualine")
+      table.insert(opts.sections.lualine_x, 5, component.lsp)
     end,
   },
   -- 右上角浮动显示当前文件名
@@ -133,17 +140,4 @@ return {
       })
     end,
   },
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.extensions, {
-        "nvim-tree",
-        "mason",
-        "toggleterm",
-      })
-      local component = require("utils.lualine")
-      table.insert(opts.sections.lualine_x, 5, component.lsp)
-    end,
-  },
-  -- { "typicode/bg.nvim", lazy = false, enabled = vim.g.transparent_enabled == false },
 }

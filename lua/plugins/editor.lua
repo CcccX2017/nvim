@@ -155,7 +155,7 @@ return {
           end
 
           telescope.extensions.file_browser.file_browser({
-            path = "%:p:h=%:p:h",
+            path = "%:p:h",
             cwd = telescope_buffer_dir(),
           })
         end,

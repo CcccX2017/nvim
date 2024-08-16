@@ -87,6 +87,10 @@ function M.setup()
       fg = c.green,
     }
 
+    highlights["StatusLine"] = {
+      bg = "NONE",
+    }
+
     highlights["MasonHeader"] = {
       fg = transparent and "$lavender" or "#222222",
       bg = transparent and "NONE" or c.orange,
