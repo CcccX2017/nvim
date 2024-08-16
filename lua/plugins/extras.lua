@@ -89,4 +89,8 @@ return {
     },
     config = function() end,
   },
+  {
+    "LunarVim/bigfile.nvim",
+    config = true,
+  },
 }

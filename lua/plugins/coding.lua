@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    version = false,
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-cmdline",
@@ -79,6 +80,8 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "buffer" },
+          { name = "luasnip" },
+          { name = "lazydev" },
         }),
       })
     end,
@@ -201,12 +204,12 @@ return {
     cmd = { "LiveServerStart", "LiveServerStop", "LiveServerToggle" },
     config = true,
   },
-  {
-    "mfussenegger/nvim-lint",
-    opts = {
-      linters_by_ft = {
-        -- lua = { "luacheck" },
-      },
-    },
-  },
+  -- {
+  --   "rafamadriz/friendly-snippets",
+  --   config = function()
+  --     require("luasnip.loaders.from_vscode").lazy_load({
+  --       paths = vim.fn.stdpath("config") .. "/snippets",
+  --     })
+  --   end,
+  -- },
 }
