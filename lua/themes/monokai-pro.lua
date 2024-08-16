@@ -2,6 +2,154 @@ local M = {}
 
 local transparent = vim.g.transparent_enabled
 
+local function set_transparent_hl(hl, c)
+  if transparent then
+    local none = "NONE"
+    hl.DiffChange = {
+      bg = none,
+    }
+    hl.BufferLineBackground = {
+      bg = none,
+    }
+    hl.BufferLineCloseButton = {
+      bg = none,
+    }
+    hl.BufferLineBufferVisible = {
+      bg = none,
+    }
+    hl.BufferLineTab = {
+      bg = none,
+    }
+    hl.BufferLineInfo = {
+      bg = none,
+    }
+    hl.BufferLineInfoVisible = {
+      bg = none,
+    }
+    hl.BufferLinePick = {
+      bg = none,
+    }
+    hl.BufferLineError = {
+      bg = none,
+    }
+    hl.BufferLineWarning = {
+      bg = none,
+    }
+    hl.BufferLineModified = {
+      bg = none,
+    }
+    hl.BufferLineDuplicate = {
+      bg = none,
+    }
+    hl.BufferLineIndicator = {
+      bg = none,
+    }
+    hl.BufferLineSeparator = {
+      bg = none,
+    }
+    hl.BufferLineTabSeparator = {
+      bg = none,
+    }
+    hl.BufferLineHintDiagnostic = {
+      bg = none,
+    }
+    hl.BufferLinePickVisible = {
+      bg = none,
+    }
+    hl.BufferLineErrorVisible = {
+      bg = none,
+    }
+    hl.BufferLineInfoDiagnostic = {
+      bg = none,
+    }
+    hl.BufferLineWarningVisible = {
+      bg = none,
+    }
+    hl.BufferLineErrorDiagnostic = {
+      bg = none,
+    }
+    hl.BufferLineModifiedVisible = {
+      bg = none,
+    }
+    hl.BufferLineDuplicateVisible = {
+      bg = none,
+    }
+    hl.BufferLineIndicatorVisible = {
+      bg = none,
+    }
+    hl.BufferLineSeparatorVisible = {
+      bg = none,
+    }
+    hl.BufferLineWarningDiagnostic = {
+      bg = none,
+    }
+    hl.BufferLineCloseButtonVisible = {
+      bg = none,
+    }
+    hl.BufferLineInfoDiagnosticVisible = {
+      bg = none,
+    }
+    hl.BufferLineErrorDiagnosticVisible = {
+      bg = none,
+    }
+    hl.BufferLineWarningDiagnosticVisible = {
+      bg = none,
+    }
+    hl.LazyNormal = {
+      bg = none,
+    }
+    hl.LazyH1 = {
+      bg = none,
+      fg = c.base.cyan,
+      bold = true,
+    }
+    hl.LazyButton = {
+      bg = none,
+    }
+    hl.LazySpecial = {
+      fg = c.base.green,
+    }
+    hl.LazyButtonActive = {
+      bg = none,
+      fg = c.base.cyan,
+    }
+    hl.LazyProgressTodo = {
+      bg = none,
+    }
+    hl.LazyProgressDone = {
+      bg = none,
+      fg = c.base.red,
+    }
+  end
+end
+
+local function set_hl(c)
+  local hl = {
+    Directory = {
+      bg = "NONE",
+    },
+    TreesitterContextSeparator = {
+      bg = "NONE",
+      fg = c.base.dimmed4,
+    },
+    PmenuSel = {
+      bg = c.base.cyan,
+      fg = c.base.black,
+    },
+    LspInlayHint = {
+      bg = "NONE",
+      fg = c.editorInlayHint.foreground,
+    },
+    BufferLineBufferSelected = {
+      italic = true,
+    },
+  }
+
+  set_transparent_hl(hl, c)
+
+  return hl
+end
+
 M.setup = function()
   local status_ok, monokai_pro = pcall(require, "monokai-pro")
   if not status_ok then
@@ -13,116 +161,7 @@ M.setup = function()
     transparent_background = transparent,
     background_clear = { "float_win", "telescope", "notify", "bufferline", "neo-tree", "nvim-tree" },
     override = function(c)
-      local bg1 = "#373438"
-      local bg2 = "#464347"
-
-      return {
-        DiffChange = {
-          bg = transparent and "NONE" or c.diffEditor.modifiedLineBackground,
-        },
-        Directory = {
-          bg = "NONE",
-        },
-        TreesitterContextSeparator = {
-          bg = "NONE",
-          fg = c.base.dimmed4,
-        },
-        PmenuSel = {
-          bg = c.base.cyan,
-          fg = c.base.black,
-        },
-        LspInlayHint = {
-          bg = "NONE",
-          fg = c.editorInlayHint.foreground,
-        },
-        BufferLineBackground = {
-          bg = transparent and "NONE" or "#404a4f",
-        },
-        BufferLineCloseButton = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineBufferVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineTab = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineInfo = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineInfoVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLinePick = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineError = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineWarning = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineModified = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineDuplicate = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineIndicator = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineSeparator = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineTabSeparator = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineHintDiagnostic = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLinePickVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineErrorVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineInfoDiagnostic = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineWarningVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineErrorDiagnostic = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineModifiedVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineDuplicateVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineIndicatorVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineSeparatorVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineWarningDiagnostic = {
-          bg = transparent and "NONE" or bg2,
-        },
-        BufferLineCloseButtonVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineInfoDiagnosticVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineErrorDiagnosticVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-        BufferLineWarningDiagnosticVisible = {
-          bg = transparent and "NONE" or bg1,
-        },
-      }
+      return set_hl(c)
     end,
   })
 end
