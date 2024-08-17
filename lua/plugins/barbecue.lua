@@ -13,6 +13,7 @@ return {
     config = function()
       local icons = require("utils.icons")
       require("barbecue").setup({
+        attach_navic = false,
         create_autocmd = false, -- prevent barbecue from updating itself automatically
         symbols = {
           separator = icons.left,
@@ -39,11 +40,30 @@ return {
   {
     "SmiteshP/nvim-navic",
     lazy = true,
-    opts = {
-      lsp = {
-        auto_attach = true,
-        preference = { "volar", "jdtls" },
-      },
-    },
+    init = function()
+      -- set nvim-navic silence
+      vim.g.navic_silence = false
+
+      local ignore_lsp = {
+        vtsls = true,
+        ["spring-boot"] = true,
+      }
+
+      LazyVim.lsp.on_attach(function(client, buffer)
+        if client.supports_method("textDocument/documentSymbol") then
+          if ignore_lsp[client.name] then
+            return
+          end
+          require("nvim-navic").attach(client, buffer)
+        end
+      end)
+    end,
+    config = function()
+      require("nvim-navic").setup({
+        lsp = {
+          auto_attach = false,
+        },
+      })
+    end,
   },
 }

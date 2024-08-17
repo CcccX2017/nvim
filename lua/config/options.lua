@@ -1,7 +1,6 @@
 local opt = vim.opt
 local g = vim.g
--- set nvim-navic silence
-g.navic_silence = true
+
 g.neotree_enabled = false
 g.project_enabled = true
 
