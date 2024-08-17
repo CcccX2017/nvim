@@ -41,6 +41,13 @@ return {
     end,
   },
   {
+    "marko-cerovac/material.nvim",
+    lazy = true,
+    config = function()
+      require("themes.material").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin",
