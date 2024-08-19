@@ -221,4 +221,15 @@ return {
       },
     },
   },
+  {
+    "lambdalisue/vim-suda",
+    cmd = { "SudaRead", "SudaWrite" },
+    keys = {
+      {
+        "<leader>W",
+        "<cmd>SudaWrite<cr>",
+        desc = "写入只读文件",
+      },
+    },
+  },
 }
