@@ -27,6 +27,11 @@ opt.backup = false
 opt.backspace = "indent,eol,start"
 
 opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
   -- vert = " ", -- Remove vertical line
   eob = " ", -- 取消空行显示波浪线
 }
