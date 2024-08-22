@@ -76,7 +76,7 @@ return {
       })
 
       -- 关闭一些path补全
-      cmp.setup.filetype({ "html", "vue" }, {
+      cmp.setup.filetype({ "html", "vue", "css", "scss" }, {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "buffer" },

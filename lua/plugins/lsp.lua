@@ -52,7 +52,7 @@ return {
       },
       indent = {
         enable = true,
-        disable = { "xml" },
+        disable = { "xml", "css" },
       },
       auto_install = true,
     },
