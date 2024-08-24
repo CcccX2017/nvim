@@ -43,6 +43,15 @@ return {
           skip = true,
         },
       })
+      table.insert(opts.routes, {
+        filter = {
+          event = "notify",
+          find = "textDocument/definition is empty",
+        },
+        opts = {
+          skip = true,
+        },
+      })
 
       opts.presets.lsp_doc_border = true
     end,

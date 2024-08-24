@@ -16,8 +16,9 @@ return {
       ensure_installed = {
         -- lsp
         "html-lsp",
-        "emmet-ls",
+        "emmet-language-server",
         "css-lsp",
+        "cssmodules-language-server",
         "pyright",
         "vue-language-server",
         "vtsls",
@@ -60,12 +61,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      opts.servers.volar = {
-        vue = {
-          hybridMode = require("utils.vue-version").setup_volar_hybrid_mode() == true,
-        },
-      }
-
       opts.servers.lua_ls.settings.Lua.hint = {
         enable = true,
         setType = false,
@@ -147,6 +142,43 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
+    },
+  },
+  {
+    "catgoose/vue-goto-definition.nvim",
+    ft = { "vue", "typescript", "javascript" },
+    event = "BufReadPre",
+    keys = {
+      {
+        "gpv",
+        function()
+          require("vue-goto-definition").goto_definition()
+        end,
+        desc = "Vue Goto Definition",
+      },
+    },
+    opts = {
+      filters = {
+        auto_imports = true,
+        auto_components = true,
+        import_same_file = true,
+        declaration = true,
+        duplicate_filename = true,
+      },
+      filetypes = { "vue", "typescript" },
+      detection = {
+        nuxt = function()
+          return vim.fn.glob(".nuxt/") ~= ""
+        end,
+        vue3 = function()
+          return vim.fn.filereadable("vite.config.ts") == 1 or vim.fn.filereadable("src/App.vue") == 1
+        end,
+        priority = { "nuxt", "vue3" },
+      },
+      lsp = {
+        override_definition = true, -- override vim.lsp.buf.definition
+      },
+      debounce = 200,
     },
   },
 }
