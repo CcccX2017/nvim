@@ -42,7 +42,7 @@ return {
     lazy = true,
     init = function()
       -- set nvim-navic silence
-      vim.g.navic_silence = false
+      vim.g.navic_silence = true
 
       local ignore_lsp = {
         vtsls = true,

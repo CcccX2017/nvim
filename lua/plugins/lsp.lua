@@ -19,6 +19,7 @@ return {
         "emmet-language-server",
         "css-lsp",
         "cssmodules-language-server",
+        "css-variables-language-server",
         "pyright",
         "vue-language-server",
         "vtsls",
