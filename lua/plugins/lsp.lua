@@ -71,6 +71,27 @@ return {
         arrayIndex = "Disable",
       }
 
+      opts.servers.cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          less = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          scss = {
+            validate = false,
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      }
+
       -- 配置lemminx-maven
       local lemminx_home = vim.env["LEMMINX_HOME"]
       if lemminx_home then
