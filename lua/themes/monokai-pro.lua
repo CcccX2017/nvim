@@ -132,10 +132,10 @@ local function set_hl(c)
       bg = "NONE",
       fg = c.base.dimmed4,
     },
-    PmenuSel = {
-      bg = c.base.cyan,
-      fg = c.base.black,
-    },
+    -- PmenuSel = {
+    --   bg = c.base.cyan,
+    --   fg = c.base.black,
+    -- },
     LspInlayHint = {
       bg = "NONE",
       fg = c.editorInlayHint.foreground,

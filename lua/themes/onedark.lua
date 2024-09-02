@@ -15,6 +15,10 @@ function M.setup()
     Pmenu = {
       bg = "NONE",
     },
+    PmenuSel = {
+      bg = c.bg3,
+      fg = "NONE",
+    },
     -- CursorLineNr = {
     --   -- fg = "#white",
     --   fg = c.cyan,

@@ -61,10 +61,10 @@ function M.setup()
         NormalFloat = {
           bg = transparent and c.none or c.base,
         },
-        PmenuSel = {
-          bg = c.green,
-          fg = c.base,
-        },
+        -- PmenuSel = {
+        --   bg = c.green,
+        --   fg = c.base,
+        -- },
         PanelHeading = {
           fg = c.lavender,
           bg = transparent and c.none or c.crust,

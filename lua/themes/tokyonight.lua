@@ -97,10 +97,10 @@ local options = {
       }
     end
 
-    hl.PmenuSel = {
-      bg = bg_sel,
-      fg = bg_dark,
-    }
+    -- hl.PmenuSel = {
+    --   bg = bg_sel,
+    --   fg = bg_dark,
+    -- }
 
     hl.EndOfBuffer = {
       fg = bg,

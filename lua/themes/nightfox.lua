@@ -12,10 +12,10 @@ local function set_groups()
     Pmenu = {
       bg = transparent and none or "palette.bg1",
     },
-    PmenuSel = {
-      bg = "palette.blue",
-      fg = "palette.bg0",
-    },
+    -- PmenuSel = {
+    --   bg = "palette.blue",
+    --   fg = "palette.bg0",
+    -- },
     LspInlayHint = {
       bg = none,
       fg = "palette.comment",
