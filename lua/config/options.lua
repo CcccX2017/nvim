@@ -43,7 +43,7 @@ opt.cmdheight = 0
 opt.autoindent = true
 
 local common = require("utils.common")
-opt.guifont = { "CaskaydiaMono Nerd Font", "Noto Sans SC", common.is_win and ":h12" or ":h16" }
+opt.guifont = { "FiraCode Nerd Font", "CaskaydiaMono Nerd Font", "Noto Sans SC", common.is_win and ":h12" or ":h16" }
 
 -- neovide配置
 if g.neovide then
