@@ -11,6 +11,7 @@ return {
       virtual_symbol_position = "inline",
       virtual_symbol = "󰝤",
       enable_tailwind = true,
+      enable_named_colors = false,
     },
   },
   {
