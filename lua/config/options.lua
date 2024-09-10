@@ -45,6 +45,21 @@ opt.autoindent = true
 local common = require("utils.common")
 opt.guifont = { "FiraCode Nerd Font", "CaskaydiaMono Nerd Font", "Noto Sans SC", common.is_win and ":h12" or ":h16" }
 
+if common.is_win then
+  local powershell_options = {
+    shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
+    shellcmdflag = "-Nologo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+    shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+    shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+    shellquote = "",
+    shellxquote = "",
+  }
+
+  for option, value in pairs(powershell_options) do
+    vim.opt[option] = value
+  end
+end
+
 -- neovide配置
 if g.neovide then
   -- if g.transparent_enabled then
