@@ -62,15 +62,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      opts.servers.lua_ls.settings.Lua.hint = {
-        enable = true,
-        setType = false,
-        paramType = true,
-        paramName = "All",
-        semicolon = "Disable",
-        arrayIndex = "Disable",
-      }
-
       opts.servers.cssls = {
         settings = {
           css = {
