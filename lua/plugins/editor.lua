@@ -133,6 +133,12 @@ return {
           previewer = true,
           initial_mode = "normal",
         },
+        package_info = {
+          theme = "ivy",
+          layout_config = {
+            height = 0.3,
+          },
+        },
       },
     },
     keys = {

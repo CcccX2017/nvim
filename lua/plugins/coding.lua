@@ -223,12 +223,83 @@ return {
     cmd = { "LiveServerStart", "LiveServerStop", "LiveServerToggle" },
     config = true,
   },
-  -- {
-  --   "rafamadriz/friendly-snippets",
-  --   config = function()
-  --     require("luasnip.loaders.from_vscode").lazy_load({
-  --       paths = vim.fn.stdpath("config") .. "/snippets",
-  --     })
-  --   end,
-  -- },
+  {
+    "vuki656/package-info.nvim",
+    ft = "json",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      colors = {
+        up_to_date = "#8CD790",
+        outdated = "#d19a66",
+        invalid = "#ee4b2b",
+      },
+      icons = {
+        enable = true,
+        style = {
+          up_to_date = "|  ",
+          outdated = "|  ",
+          invalid = "|  ",
+        },
+      },
+      autostart = true,
+      hide_up_to_date = false,
+      hide_unstable_versions = false,
+      package_manager = "npm",
+    },
+    config = function(_, opts)
+      require("package-info").setup(opts)
+
+      -- manually register them
+      vim.cmd([[highlight PackageInfoUpToDateVersion guifg=]] .. opts.colors.up_to_date)
+      vim.cmd([[highlight PackageInfoOutdatedVersion guifg=]] .. opts.colors.outdated)
+
+      require("telescope").load_extension("package_info")
+    end,
+    keys = {
+      {
+        "<leader>ns",
+        "<cmd>lua require('package-info').show()<cr>",
+        desc = "Display Latest Package Version",
+        silent = true,
+        noremap = true,
+      },
+      {
+        "<leader>nd",
+        "<cmd>lua require('package-info').delete()<cr>",
+        desc = "Delete Dependency",
+        silent = true,
+        noremap = true,
+      },
+      {
+        "<leader>np",
+        "<cmd>lua require('package-info').change_version()<cr>",
+        desc = "Install Different Version",
+        silent = true,
+        noremap = true,
+      },
+      {
+        "<leader>ni",
+        "<cmd>lua require('package-info').install()<cr>",
+        desc = "Install New Dependency",
+        silent = true,
+        noremap = true,
+      },
+      {
+        "<leader>nu",
+        "<cmd>lua require('package-info').update()<cr>",
+        desc = "Update dependency",
+        silent = true,
+        noremap = true,
+      },
+      {
+        "<leader>nt",
+        "<cmd>lua require('package-info').toggle()<cr>",
+        desc = "Toggle dependency",
+        silent = true,
+        noremap = true,
+      },
+    },
+  },
 }
