@@ -33,6 +33,7 @@ return {
   },
   {
     "vidocqh/auto-indent.nvim",
+    event = "VeryLazy",
     config = function()
       require("auto-indent").setup({
         lightmode = true,
