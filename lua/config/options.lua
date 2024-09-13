@@ -6,6 +6,7 @@ g.project_enabled = true
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+g.db_ui_force_echo_notifications = true
 
 -- if vim.uv.os_uname().sysname == "Windows_NT" then
 --   g.editorconfig = false

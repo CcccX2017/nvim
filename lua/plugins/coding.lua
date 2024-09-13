@@ -32,9 +32,11 @@ return {
 
       opts.mapping["<Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_jumpable() then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        elseif vim.api.nvim_get_mode().mode ~= "c" and luasnip.expand_or_locally_jumpable() then
           luasnip.expand_or_jump()
+        elseif M.has_words_before() then
+          cmp.complete()
         else
           fallback()
         end
@@ -42,8 +44,8 @@ return {
 
       opts.mapping["<S-Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+        elseif vim.api.nvim_get_mode().mode ~= "c" and luasnip.jumpable(-1) then
           luasnip.jump(-1)
         else
           fallback()

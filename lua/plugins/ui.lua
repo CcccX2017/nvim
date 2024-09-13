@@ -106,7 +106,7 @@ return {
         "toggleterm",
       })
       local component = require("utils.lualine")
-      table.insert(opts.sections.lualine_x, 5, component.lsp)
+      table.insert(opts.sections.lualine_x, 6, component.lsp)
     end,
   },
   -- 右上角浮动显示当前文件名

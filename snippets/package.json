@@ -8,6 +8,15 @@
       {
         "language": "vue",
         "path": "./vue.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "javascriptreact",
+          "vue",
+          "svelte"
+        ],
+        "path": "./javascript.json"
       }
     ]
   }

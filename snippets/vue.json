@@ -16,5 +16,10 @@
       ""
     ],
     "description": "My standard setup Vue3 + TS"
+  },
+  "Vue2 nextTicks": {
+    "prefix": ["nexttick2"],
+    "body": ["this.\\$nextTick(() => {", "\t$1", "}"],
+    "description": "Vue2 nextTicks"
   }
 }

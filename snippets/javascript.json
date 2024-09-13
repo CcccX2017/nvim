@@ -1,0 +1,27 @@
+{
+  "fori": {
+    "prefix": "fori",
+    "body": ["for (let ${1:i} = 0; ${1:i} < ${2}; ${1:i}++) {", "\t$0", "}"],
+    "description": "创建迭代循环"
+  },
+  "anfn": {
+    "prefix": "anfn",
+    "body": ["(${1}) => {", "\t$0", "}"],
+    "description": "匿名箭头函数"
+  },
+  "Surround with arrow functions": {
+    "prefix": "arf",
+    "body": ["const ${1} = () => {", "\t$0", "};"],
+    "description": "使用箭头函数包围"
+  },
+  "Set Timeout Function": {
+    "prefix": "st",
+    "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
+    "description": "Set Timeout Function"
+  },
+  "Set Interval Function": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "\t$0", "}, ${1:interval});"],
+    "description": "Set Interval Function"
+  }
+}

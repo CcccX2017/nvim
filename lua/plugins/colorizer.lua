@@ -23,7 +23,6 @@ return {
       },
     },
     opts = function(_, opts)
-      local i = 0
       opts.formatting = {
         format = function(entry, item)
           local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
@@ -32,6 +31,9 @@ return {
             preset = "codicons",
             ellipsis_char = "...",
             show_labelDetails = false,
+            symbol_map = {
+              Codeium = "",
+            },
             before = function(_, vim_item)
               local max_width = math.floor(0.25 * vim.o.columns)
               local label = vim_item.abbr

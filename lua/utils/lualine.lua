@@ -72,7 +72,7 @@ local M = {
     cond = function()
       return vim.o.columns > window_width_limit
     end,
-    separator = "",
+    separator = icons.right,
   },
 }
 
