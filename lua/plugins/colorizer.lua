@@ -32,7 +32,7 @@ return {
             ellipsis_char = "...",
             show_labelDetails = false,
             symbol_map = {
-              Codeium = "",
+              Codeium = "🅲",
             },
             before = function(_, vim_item)
               local max_width = math.floor(0.25 * vim.o.columns)
