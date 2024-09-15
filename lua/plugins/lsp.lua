@@ -20,6 +20,7 @@ return {
         "css-lsp",
         "cssmodules-language-server",
         "css-variables-language-server",
+        "tailwindcss-language-server",
         "pyright",
         "vue-language-server",
         "vtsls",
