@@ -2,13 +2,13 @@
   "Vue3 TS": {
     "prefix": ["setup", "template"],
     "body": [
-      "<template>",
-      "\t$1",
-      "</template>",
-      "",
       "<script lang=\"ts\" setup>",
       "\t$2",
       "</script>",
+      "",
+      "<template>",
+      "\t$1",
+      "</template>",
       "",
       "<style scoped lang=\"scss\">",
       "\t$3",
