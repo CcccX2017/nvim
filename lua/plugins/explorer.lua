@@ -1,6 +1,7 @@
 return {
   {
     "nvim-tree/nvim-tree.lua",
+    version = require("utils.common").is_win and "1.6.1" or false,
     event = "VeryLazy",
     cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
     dependencies = {
