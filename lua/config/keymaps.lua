@@ -71,3 +71,9 @@ map("n", "<M-left>", ":vertical resize-5<cr>", opts)
 map("n", "<M-right>", ":vertical resize+5<cr>", opts)
 
 map("v", "c", '"_c', opts)
+
+map("n", "n", "nzz", opts)
+map("n", "N", "Nzz", opts)
+
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
