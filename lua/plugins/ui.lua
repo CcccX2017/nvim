@@ -149,4 +149,30 @@ return {
       })
     end,
   },
+  {
+    "echasnovski/mini.icons",
+    opts = function(_, opts)
+      vim.api.nvim_set_hl(0, "MiniIconsEslint", { fg = "#4b32c3" })
+      vim.api.nvim_set_hl(0, "MiniIconsBun", { fg = "#FEF8E4" })
+      vim.api.nvim_set_hl(0, "MiniIconsPackage", { fg = "#97C05C" })
+      vim.api.nvim_set_hl(0, "MiniIconsReadMe", { fg = "#5CA5EF" })
+
+      opts.file[".eslintrc.cjs"] = { glyph = "", hl = "MiniIconsEslint" }
+      opts.file[".eslintrc.js"] = { glyph = "", hl = "MiniIconsEslint" }
+      opts.file["bun.lockb"] = { glyph = "", hl = "MiniIconsBun" }
+      opts.file["package-lock.json"] = { glyph = "", hl = "MiniIconsPackage" }
+      opts.file["package.json"] = { glyph = "", hl = "MiniIconsPackage" }
+      opts.file["README.md"] = { glyph = "󰋼", hl = "MiniIconsReadMe" }
+      opts.file[".prettierrc.json"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.cjs"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.js"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.yaml"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.json5"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.mjs"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.toml"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file[".prettierrc.yml"] = { glyph = "", hl = "MiniIconsRed" }
+      opts.file["favicon.ico"] = { glyph = "", hl = "MiniIconsYellow" }
+    end,
+  },
 }
