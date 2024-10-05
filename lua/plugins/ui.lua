@@ -46,18 +46,8 @@ return {
 
       table.insert(opts.routes, {
         filter = {
-          event = "notify",
-          find = "[codeium/codeium.log]",
-        },
-        opts = {
-          skip = true,
-        },
-      })
-
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "[codeium/codeium.log] }",
+          event = "msg_show",
+          find = "%[codeium/codeium%.log%]",
         },
         opts = {
           skip = true,
