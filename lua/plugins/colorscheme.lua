@@ -49,8 +49,14 @@ return {
   },
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nightfox",
-    },
+    opts = function(_, opts)
+      local theme = "nightfox"
+      vim.keymap.set("n", "<leader>bg", function()
+        vim.g.transparent_enabled = not vim.g.transparent_enabled
+        require("themes." .. theme).setup()
+        vim.cmd("colorscheme " .. theme)
+      end, { noremap = true, silent = true, desc = "Toggle transparency" })
+      opts.colorscheme = theme
+    end,
   },
 }

@@ -1,8 +1,7 @@
 local M = {}
 
-local transparent = vim.g.transparent_enabled
-
 local function set_transparent_hl(hl, c)
+  local transparent = vim.g.transparent_enabled
   if transparent then
     local none = "NONE"
     hl.DiffChange = {
@@ -155,6 +154,8 @@ M.setup = function()
   if not status_ok then
     return
   end
+
+  local transparent = vim.g.transparent_enabled
 
   monokai_pro.setup({
     filter = transparent and "pro" or "machine",

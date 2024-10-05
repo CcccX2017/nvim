@@ -1,8 +1,8 @@
 local M = {}
 
-local transparent = vim.g.transparent_enabled
-
 function M.setup()
+  local transparent = vim.g.transparent_enabled
+
   local status_ok, catppuccin = pcall(require, "catppuccin")
 
   if not status_ok then

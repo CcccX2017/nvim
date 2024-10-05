@@ -1,10 +1,8 @@
 local M = {}
 
-local transparent = vim.g.transparent_enabled
-
 local none = "NONE"
 
-local function set_groups()
+local function set_groups(transparent)
   local all = {
     NormalFloat = {
       bg = transparent and none or "palette.bg1",
@@ -94,6 +92,8 @@ M.setup = function()
     return
   end
 
+  local transparent = vim.g.transparent_enabled
+
   nightfox.setup({
     options = {
       transparent = transparent,
@@ -102,7 +102,7 @@ M.setup = function()
         functions = "italic",
       },
     },
-    groups = set_groups(),
+    groups = set_groups(transparent),
   })
 end
 

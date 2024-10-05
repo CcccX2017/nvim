@@ -1,12 +1,12 @@
 local M = {}
 
-local transparent = vim.g.transparent_enabled
-
 function M.setup()
   local status_ok, onedark = pcall(require, "onedark")
   if not status_ok then
     return
   end
+
+  local transparent = vim.g.transparent_enabled
 
   local style = transparent and "dark" or "cool"
   local c = require("onedark.palette")[style]

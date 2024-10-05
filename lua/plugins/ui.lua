@@ -47,6 +47,16 @@ return {
       table.insert(opts.routes, {
         filter = {
           event = "notify",
+          find = "[codeium/codeium.log]",
+        },
+        opts = {
+          skip = true,
+        },
+      })
+
+      table.insert(opts.routes, {
+        filter = {
+          event = "notify",
           find = "No LSP Definitions found",
         },
         opts = {
