@@ -32,7 +32,11 @@ return {
 
       opts.mapping["<Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          if vim.g.codeium_enabled then
+            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          else
+            cmp.select_next_item()
+          end
         elseif vim.api.nvim_get_mode().mode ~= "c" and luasnip.expand_or_locally_jumpable() then
           luasnip.expand_or_jump()
         elseif M.has_words_before() then
@@ -44,7 +48,11 @@ return {
 
       opts.mapping["<S-Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+          if vim.g.codeium_enabled then
+            cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+          else
+            cmp.select_prev_item()
+          end
         elseif vim.api.nvim_get_mode().mode ~= "c" and luasnip.jumpable(-1) then
           luasnip.jump(-1)
         else
@@ -311,5 +319,9 @@ return {
         paths = { vim.fn.stdpath("config") .. "/snippets" },
       })
     end,
+  },
+  {
+    "Exafunction/codeium.nvim",
+    enabled = vim.g.codeium_enabled,
   },
 }

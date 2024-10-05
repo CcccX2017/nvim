@@ -12,6 +12,8 @@ g.db_ui_force_echo_notifications = true
 --   g.editorconfig = false
 -- end
 
+g.codeium_enabled = true
+
 g.transparent_enabled = true
 if g.transparent_enabled then
   opt.winblend = 0
