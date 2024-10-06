@@ -86,11 +86,24 @@ local function set_groups(transparent)
   return groups
 end
 
+local function set_rainbow_color()
+  local palette = require("nightfox.palette").load("nightfox")
+  vim.cmd([[highlight RainbowDelimiterRed guifg=]] .. palette.red.base)
+  vim.cmd([[highlight RainbowDelimiterOrange guifg=]] .. palette.orange.base)
+  vim.cmd([[highlight RainbowDelimiterYellow guifg=]] .. palette.yellow.base)
+  vim.cmd([[highlight RainbowDelimiterGreen guifg=]] .. palette.green.base)
+  vim.cmd([[highlight RainbowDelimiterBlue guifg=]] .. palette.blue.base)
+  vim.cmd([[highlight RainbowDelimiterViolet guifg=]] .. palette.magenta.base)
+  vim.cmd([[highlight RainbowDelimiterCyan guifg=]] .. palette.cyan.base)
+end
+
 M.setup = function()
   local status_ok, nightfox = pcall(require, "nightfox")
   if not status_ok then
     return
   end
+
+  set_rainbow_color()
 
   local transparent = vim.g.transparent_enabled
 
