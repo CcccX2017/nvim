@@ -60,7 +60,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = function(_, opts)
-      local theme = "github_dark"
+      local theme = "onedark"
       vim.keymap.set("n", "<leader>bg", function()
         vim.g.transparent_enabled = not vim.g.transparent_enabled
         require("themes." .. theme).setup()
