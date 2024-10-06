@@ -84,6 +84,17 @@ return {
         },
       }
 
+      opts.servers.vtsls.settings["javascript"] = {
+        inlayHints = {
+          enumMemberValues = { enabled = true },
+          functionLikeReturnTypes = { enabled = false },
+          parameterNames = { enabled = "literals" },
+          parameterTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          variableTypes = { enabled = false },
+        },
+      }
+
       -- 配置lemminx-maven
       local lemminx_home = vim.env["LEMMINX_HOME"]
       if lemminx_home then
