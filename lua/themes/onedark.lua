@@ -16,7 +16,7 @@ function M.setup()
       bg = "NONE",
     },
     PmenuSel = {
-      bg = c.bg3,
+      bg = "#3c5372",
       fg = "NONE",
     },
     -- CursorLineNr = {
