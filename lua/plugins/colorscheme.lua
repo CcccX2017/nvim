@@ -43,14 +43,24 @@ return {
   {
     "marko-cerovac/material.nvim",
     lazy = true,
+    priority = 1000,
     config = function()
       require("themes.material").setup()
     end,
   },
   {
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("themes.github_dark").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = function(_, opts)
-      local theme = "nightfox"
+      local theme = "github_dark"
       vim.keymap.set("n", "<leader>bg", function()
         vim.g.transparent_enabled = not vim.g.transparent_enabled
         require("themes." .. theme).setup()

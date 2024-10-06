@@ -119,7 +119,7 @@ return {
           no_buffer = false,
           custom = {
             -- "node_modules",
-            ".git",
+            -- ".git",
             "\\.cache",
             "\\.idea",
             "\\.git",
