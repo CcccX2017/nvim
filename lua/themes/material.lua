@@ -14,12 +14,13 @@ M.setup = function()
     return
   end
 
-  vim.g.transparent_enabled = false
-
   vim.g.material_style = themes.oceanic
 
   local colors = require("material.colors")
   material.setup({
+    disable = {
+      background = vim.g.transparent_enabled,
+    },
     async_loading = false,
     styles = {
       keywords = { bold = true },
@@ -61,15 +62,18 @@ M.setup = function()
         bg = colors.editor.selection,
       },
       TreesitterContext = {
-        bg = colors.editor.bg,
+        bg = vim.g.transparent_enabled and "none" or colors.editor.bg,
       },
       TreesitterContextLineNumber = {
-        bg = colors.editor.bg,
+        bg = vim.g.transparent_enabled and "none" or colors.editor.bg,
       },
       MiniIconsAzure = {
         link = "MiniIconsAzure",
         italic = false,
         fg = colors.syntax.fn,
+      },
+      Pmenu = {
+        bg = vim.g.transparent_enabled and "none" or colors.editor.selection,
       },
     },
   })
