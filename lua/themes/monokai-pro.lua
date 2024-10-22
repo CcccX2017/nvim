@@ -160,7 +160,7 @@ M.setup = function()
   monokai_pro.setup({
     filter = transparent and "pro" or "machine",
     transparent_background = transparent,
-    background_clear = { "float_win", "telescope", "notify", "bufferline", "neo-tree", "nvim-tree" },
+    background_clear = { "float_win", "telescope", "notify", "bufferline", "neo-tree", "nvim-tree", "which-key" },
     override = function(c)
       return set_hl(c)
     end,
