@@ -58,6 +58,31 @@ return {
     end,
   },
   {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("themes.gruvbox").setup()
+    end,
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("themes.rose-pine").setup()
+    end,
+  },
+  {
+    "Shatur/neovim-ayu",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("themes.ayu").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = function(_, opts)
       local colorscheme = require("utils.colorscheme")

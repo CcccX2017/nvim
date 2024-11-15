@@ -1,6 +1,6 @@
 local M = {}
 
-local default_theme = "tokyonight"
+local default_theme = "ayu"
 
 local themes = {
   "catppuccin",
@@ -10,6 +10,9 @@ local themes = {
   "nightfox",
   "onedark",
   "tokyonight",
+  "gruvbox",
+  "rose-pine",
+  "ayu",
 }
 
 local json = require("utils.json")
