@@ -60,22 +60,19 @@ return {
   {
     "LazyVim/LazyVim",
     opts = function(_, opts)
-      local theme = require("themes.random.random_themes").random()
+      local colorscheme = require("utils.colorscheme")
+      local theme = colorscheme.random()
       opts.colorscheme = theme
 
-      local function change_theme()
-        require("themes." .. theme).setup()
-        vim.cmd("colorscheme " .. theme)
-      end
-
       vim.keymap.set("n", "<leader>bg", function()
-        vim.g.transparent_enabled = not vim.g.transparent_enabled
-        change_theme()
+        -- vim.g.transparent_enabled = not vim.g.transparent_enabled
+        colorscheme.set_transparent(not vim.g.transparent_enabled)
+        colorscheme.change_theme(theme)
       end, { noremap = true, silent = true, desc = "Toggle transparency" })
 
       vim.keymap.set("n", "<leader>bt", function()
-        theme = require("themes.random.random_themes").toggle_random_enabled()
-        change_theme()
+        theme = colorscheme.toggle_random_enabled()
+        colorscheme.change_theme(theme)
       end, { silent = true, noremap = true, desc = "Toggle Random theme" })
     end,
   },

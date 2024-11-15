@@ -12,14 +12,14 @@ local themes = {
   "tokyonight",
 }
 
-local config_path = vim.fn.stdpath("config") .. "/lua/themes/random/random_theme_config.txt"
+local json = require("utils.json")
+local nebula_nvim = require("utils.nebula-nvim")
+local file_path = nebula_nvim.file_path
+local config = json.read_json(file_path)
 
 local function read_persistent_value()
-  local file = io.open(config_path, "r")
-  if file then
-    local value = string.gsub(file:read("*a"), "%s+", "")
-    file:close()
-    return value == "true"
+  if config and config.theme and config.theme.random ~= nil then
+    return config.theme.random
   end
 
   -- 默认返回false
@@ -27,10 +27,9 @@ local function read_persistent_value()
 end
 
 local function write_persistent_value(value)
-  local file = io.open(config_path, "w")
-  if file then
-    file:write(tostring(value))
-    file:close()
+  if config and config.theme and config.theme.random ~= nil then
+    config.theme.random = value
+    json.write_json(file_path, config)
   end
 end
 
@@ -73,6 +72,24 @@ M.random = function()
 
   vim.notify("Current Theme: " .. theme)
   return theme
+end
+
+M.get_transparent = function() end
+
+M.set_transparent = function(transparent)
+  transparent = transparent or false
+  vim.g.transparent_enabled = transparent
+  -- 持久化
+  local data = json.read_json(file_path)
+  if data then
+    data.theme.transparent = transparent
+    json.write_json(file_path, data)
+  end
+end
+
+M.change_theme = function(theme)
+  require("themes." .. theme).setup()
+  vim.cmd("colorscheme " .. theme)
 end
 
 return M

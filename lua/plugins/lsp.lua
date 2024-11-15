@@ -163,6 +163,7 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       keys[#keys + 1] = { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Lspsaga hover doc" }
       keys[#keys + 1] = { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Code Action" }
+      keys[#keys + 1] = { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "Lspsaga goto definition" }
     end,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
