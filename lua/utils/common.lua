@@ -10,4 +10,14 @@ function M.java_bin()
   return "java"
 end
 
+function M.file_is_exist(file_path)
+  local file = io.open(file_path, "r")
+  if file then
+    file:close()
+    return true
+  end
+
+  return false
+end
+
 return M

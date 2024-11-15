@@ -14,7 +14,17 @@ g.db_ui_force_echo_notifications = true
 
 g.codeium_enabled = true
 
-g.transparent_enabled = true
+local function get_transparent_enabled()
+  local json = require("utils.json")
+  local config = require("utils.nebula-nvim")
+  local data = json.read_json(config.file_path)
+  if data and data.theme and data.theme.transparent ~= nil then
+    return data.theme.transparent
+  end
+  return false
+end
+
+g.transparent_enabled = get_transparent_enabled()
 if g.transparent_enabled then
   opt.winblend = 0
   opt.pumblend = 0
