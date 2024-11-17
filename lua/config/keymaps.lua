@@ -77,3 +77,10 @@ map("n", "N", "Nzz", opts)
 
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
+
+map(
+  "n",
+  "<leader>m",
+  "<cmd>lua Snacks.notifier.show_history()<cr>",
+  { desc = "显示历史消息", noremap = true, silent = true }
+)

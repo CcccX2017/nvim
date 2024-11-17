@@ -1,6 +1,6 @@
 local M = {}
 
-local default_theme = "ayu"
+local default_theme = "tokyonight"
 
 local themes = {
   "catppuccin",
