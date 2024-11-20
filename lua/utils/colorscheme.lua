@@ -18,9 +18,9 @@ local themes = {
 local json = require("utils.json")
 local nebula_nvim = require("utils.nebula-nvim")
 local file_path = nebula_nvim.file_path
-local config = json.read_json(file_path)
 
 local function read_persistent_value()
+  local config = json.read_json(file_path)
   if config and config.theme and config.theme.random ~= nil then
     return config.theme.random
   end
@@ -30,6 +30,7 @@ local function read_persistent_value()
 end
 
 local function write_persistent_value(value)
+  local config = json.read_json(file_path)
   if config and config.theme and config.theme.random ~= nil then
     config.theme.random = value
     json.write_json(file_path, config)
