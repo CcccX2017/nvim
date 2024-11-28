@@ -19,6 +19,7 @@ return {
       require("spring_boot").setup({
         ls_path = ls_path,
         jdtls_name = "jdtls",
+        exploded_ls_jar_data = false,
         log_file = nil,
         java_cmd = nil,
         server = {
