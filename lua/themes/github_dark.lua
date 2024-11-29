@@ -44,6 +44,39 @@ M.setup = function()
         FloatBorder = {
           fg = "palette.fg.muted",
         },
+        -- lazy.nvim
+        LazyH1 = {
+          bg = transparent and none or "palette.orange",
+          fg = transparent and "palette.orange" or "palette.black.bright",
+          style = "bold",
+        },
+        LazyButton = {
+          bg = transparent and none or "#484f58",
+          fg = transparent and "palette.gray.bright" or "palette.fg.default",
+        },
+        LazyButtonActive = {
+          bg = transparent and none or "#304d75",
+          fg = transparent and "palette.orange" or "palette.fg.default",
+          style = "bold",
+        },
+        LazySpecial = {
+          fg = "#a6e3a1",
+        },
+        MasonHeader = {
+          bg = transparent and none or "#dca561",
+          fg = transparent and "#dca561" or "#222222",
+          style = "bold",
+        },
+        MasonMutedBlock = {
+          bg = transparent and none or "#888888",
+          fg = transparent and "palette.gray.bright" or "#222222",
+          style = "bold",
+        },
+        MasonHighlightBlockBold = {
+          bg = transparent and none or "#56b6c2",
+          fg = transparent and "#56b6c2" or "#222222",
+          style = "bold",
+        },
       },
     },
   })
