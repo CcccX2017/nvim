@@ -1,13 +1,13 @@
 local M = {}
 
 M.setup = function()
-  local transparent = vim.g.transparent_enabled
-
   local status_ok, gruvbox = pcall(require, "gruvbox")
 
   if not status_ok then
     return
   end
+
+  local transparent = vim.g.transparent_enabled
 
   local c = gruvbox.palette
   local none = "NONE"
@@ -31,6 +31,34 @@ M.setup = function()
       },
       StatusLine = {
         fg = c.dark1,
+      },
+      LazyH1 = {
+        bg = transparent and none or c.bright_orange,
+        fg = transparent and c.bright_orange or c.dark0,
+        bold = true,
+      },
+      LazyButton = {
+        bg = transparent and none or c.dark3,
+        fg = transparent and c.dark4 or c.light1,
+      },
+      LazyButtonActive = {
+        bg = transparent and none or c.dark3,
+        fg = transparent and c.bright_orange or c.light1,
+      },
+      MasonHeader = {
+        bg = transparent and none or c.bright_yellow,
+        fg = transparent and c.bright_yellow or c.dark0,
+        bold = true,
+      },
+      MasonMutedBlock = {
+        bg = transparent and none or c.light4,
+        fg = transparent and c.dark4 or c.dark0,
+        bold = true,
+      },
+      MasonHighlightBlockBold = {
+        bg = transparent and none or c.bright_aqua,
+        fg = transparent and c.bright_aqua or c.dark0,
+        bold = true,
       },
     },
   })
