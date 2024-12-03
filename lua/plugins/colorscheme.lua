@@ -83,6 +83,14 @@ return {
     end,
   },
   {
+    "craftzdog/solarized-osaka.nvim",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("themes.solarized-osaka").setup()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = function(_, opts)
       local colorscheme = require("utils.colorscheme")
