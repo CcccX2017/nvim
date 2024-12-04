@@ -95,6 +95,20 @@ local get_options = function()
           fg = c.bg_float,
           bg = c.none,
         }
+        hl.MasonHeader = {
+          bg = transparent and c.none or "#dca561",
+          fg = transparent and "#dca561" or "#222222",
+          bold = true,
+        }
+        hl.MasonMutedBlock = {
+          bg = transparent and c.none or "#888888",
+          fg = transparent and "#888888" or "#222222",
+        }
+        hl.MasonHighlightBlockBold = {
+          bg = transparent and c.none or "#56b6c2",
+          fg = transparent and "#56b6c2" or "#222222",
+          bold = true,
+        }
       end
 
       -- hl.PmenuSel = {
