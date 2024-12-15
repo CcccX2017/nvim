@@ -184,6 +184,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
+      preset = "classic",
       icons = {
         rules = false,
         mappings = false,
