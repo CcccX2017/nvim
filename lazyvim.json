@@ -4,8 +4,7 @@
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.tailwind",
-    "lazyvim.plugins.extras.ui.dashboard-nvim",
-    "lazyvim.plugins.extras.ui.indent-blankline"
+    "lazyvim.plugins.extras.ui.dashboard-nvim"
   ],
   "news": {
     "NEWS.md": "10960"
