@@ -142,6 +142,9 @@ local function set_hl(c)
     BufferLineBufferSelected = {
       italic = true,
     },
+    SnacksIndent = {
+      fg = c.base.dimmed4,
+    },
   }
 
   set_transparent_hl(hl, c)
