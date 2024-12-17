@@ -89,9 +89,4 @@ return {
     },
     config = function() end,
   },
-  {
-    "LunarVim/bigfile.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
 }

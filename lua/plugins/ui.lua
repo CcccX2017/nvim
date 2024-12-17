@@ -195,6 +195,8 @@ return {
           header = require("utils.logo").get_logo(),
         },
       },
+      bigfile = { enabled = true },
+      quickfile = { enabled = true },
     },
   },
   {
