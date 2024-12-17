@@ -3,32 +3,32 @@ return {
     "max397574/better-escape.nvim",
     event = "InsertCharPre",
   },
-  {
-    "ojroques/nvim-bufdel",
-    cmd = { "BufDelAll", "BufDelOthers", "BufDel" },
-    keys = {
-      {
-        "<leader>ba",
-        "<cmd>BufDelAll<cr>",
-        desc = "Delete All Buffer",
-        noremap = true,
-        silent = true,
-      },
-      {
-        "<leader>br",
-        "<cmd>BufDelOthers<cr>",
-        desc = "Delete Others Buffer",
-        noremap = true,
-        silent = true,
-      },
-    },
-    opts = function()
-      require("bufdel").setup({
-        next = "tabs",
-        quit = false,
-      })
-    end,
-  },
+  -- {
+  --   "ojroques/nvim-bufdel",
+  --   cmd = { "BufDelAll", "BufDelOthers", "BufDel" },
+  --   keys = {
+  --     {
+  --       "<leader>ba",
+  --       "<cmd>BufDelAll<cr>",
+  --       desc = "Delete All Buffer",
+  --       noremap = true,
+  --       silent = true,
+  --     },
+  --     {
+  --       "<leader>br",
+  --       "<cmd>BufDelOthers<cr>",
+  --       desc = "Delete Others Buffer",
+  --       noremap = true,
+  --       silent = true,
+  --     },
+  --   },
+  --   opts = function()
+  --     require("bufdel").setup({
+  --       next = "tabs",
+  --       quit = false,
+  --     })
+  --   end,
+  -- },
   {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",

@@ -84,3 +84,17 @@ map(
   "<cmd>lua Snacks.notifier.show_history()<cr>",
   { desc = "显示历史消息", noremap = true, silent = true }
 )
+
+-- Snacks bufdel
+map(
+  "n",
+  "<leader>ba",
+  "<cmd>lua Snacks.bufdelete.all()<cr>",
+  { desc = "删除所有buffer", noremap = true, silent = true }
+)
+map(
+  "n",
+  "<leader>br",
+  "<cmd>lua Snacks.bufdelete.other()<cr>",
+  { desc = "删除其他buffer", noremap = true, silent = true }
+)
