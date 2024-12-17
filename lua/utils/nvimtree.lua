@@ -1,7 +1,8 @@
 local M = {}
 
 local function start_telescope(telescope_mode)
-  local node = require("nvim-tree.lib").get_node_at_cursor()
+  local node = require("nvim-tree.api").tree.get_node_under_cursor()
+  vim.notify(node)
   if node then
     local abspath = node.link_to or node.absolute_path
     local is_folder = node.open ~= nil
@@ -34,7 +35,7 @@ function M.on_attach(bufnr)
   vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
   vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("CD"))
-  vim.keymap.set("n", "<leader>ep", api.tree.change_root_to_parent, opts("Telescope Find Files"))
+  vim.keymap.set("n", "<leader>ep", api.tree.change_root_to_parent, opts("Change Root To Parent"))
   vim.keymap.set("n", "<leader>ec", api.tree.collapse_all, opts("Collapse All"))
   vim.keymap.set("n", "<leader>el", telescope_live_grep, opts("Telescope Live Grep"))
   vim.keymap.set("n", "<leader>ef", telescope_find_files, opts("Telescope Find Files"))
