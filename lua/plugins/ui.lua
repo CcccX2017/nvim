@@ -90,14 +90,6 @@ return {
     },
   },
   {
-    "nvimdev/dashboard-nvim",
-    lazy = false,
-    opts = function(_, opts)
-      local logo = require("utils.logo").get_logo()
-      opts.config.header = logo
-    end,
-  },
-  {
     "hiphish/rainbow-delimiters.nvim",
     event = "LazyFile",
     config = function()
@@ -194,5 +186,35 @@ return {
       opts.file[".prettierrc.yml"] = { glyph = "", hl = "MiniIconsRed" }
       opts.file["favicon.ico"] = { glyph = "", hl = "MiniIconsYellow" }
     end,
+  },
+  {
+    "snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = require("utils.logo").get_logo(),
+        },
+      },
+    },
+  },
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      fzf_colors = {
+        ["fg"] = { "fg", "CursorLine" },
+        ["bg"] = { "bg", "Normal" },
+        ["hl"] = { "fg", "Comment" },
+        ["fg+"] = { "fg", "Normal" },
+        ["bg+"] = { "bg", "CursorLine" },
+        ["hl+"] = { "fg", "Statement" },
+        ["info"] = { "fg", "PreProc" },
+        ["prompt"] = { "fg", "Conditional" },
+        ["pointer"] = { "fg", "Exception" },
+        ["marker"] = { "fg", "Keyword" },
+        ["spinner"] = { "fg", "Label" },
+        ["header"] = { "fg", "Comment" },
+        ["gutter"] = "-1",
+      },
+    },
   },
 }
