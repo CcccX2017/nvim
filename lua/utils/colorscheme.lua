@@ -13,6 +13,7 @@ local themes = {
   "gruvbox",
   "rose-pine",
   "ayu",
+  "solarized-osaka",
 }
 
 local json = require("utils.json")
