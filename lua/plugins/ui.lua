@@ -171,7 +171,7 @@ return {
 
       opts.file[".eslintrc.cjs"] = { glyph = "", hl = "MiniIconsEslint" }
       opts.file[".eslintrc.js"] = { glyph = "", hl = "MiniIconsEslint" }
-      opts.file["bun.lockb"] = { glyph = "", hl = "MiniIconsBun" }
+      opts.file["bun.lockb"] = { glyph = "", hl = "MiniIconsBun" }
       opts.file["package-lock.json"] = { glyph = "", hl = "MiniIconsPackage" }
       opts.file["package.json"] = { glyph = "", hl = "MiniIconsPackage" }
       opts.file["README.md"] = { glyph = "󰋼", hl = "MiniIconsReadMe" }
