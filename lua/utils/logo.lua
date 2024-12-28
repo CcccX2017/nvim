@@ -23,6 +23,7 @@ local term_programs = {
   kitty = "KITTY_PID",
   alacritty = "TERM",
   xterm = "TERM",
+  powershell = "PSModulePath",
 }
 
 local function detect_terminal()
