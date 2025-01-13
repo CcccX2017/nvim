@@ -89,9 +89,7 @@ M.setup = function()
       hl.LazyH1 = {
         bg = transparent and c.none or c.orange,
         fg = transparent and c.orange or c.black,
-        style = {
-          bold = true,
-        },
+        bold = true,
       }
       hl.LazyButton = {
         bg = transparent and c.none or c.base03,
@@ -104,9 +102,7 @@ M.setup = function()
       hl.MasonHeader = {
         bg = transparent and c.none or c.orange100,
         fg = transparent and c.orange100 or c.black,
-        style = {
-          bold = true,
-        },
+        bold = true,
       }
       hl.MasonMutedBlock = {
         bg = transparent and c.none or "#888888",
