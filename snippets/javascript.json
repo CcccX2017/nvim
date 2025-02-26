@@ -23,5 +23,14 @@
     "prefix": "si",
     "body": ["setInterval(() => {", "\t$0", "}, ${1:interval});"],
     "description": "Set Interval Function"
+  },
+  "React简单模板": {
+    "prefix": "sfc",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE/(^\\w)(.*)/${1:/capitalize}${2}/}}() {",
+      "  return <>${0}</>",
+      "}"
+    ],
+    "description": "Creates a function with the same name as the file, with the first letter capitalized"
   }
 }

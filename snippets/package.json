@@ -14,7 +14,8 @@
           "javascript",
           "javascriptreact",
           "vue",
-          "svelte"
+          "svelte",
+          "typescriptreact"
         ],
         "path": "./javascript.json"
       }
