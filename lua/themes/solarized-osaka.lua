@@ -112,6 +112,10 @@ M.setup = function()
         bg = transparent and c.none or "#56b6c2",
         fg = transparent and "#56b6c2" or "#222222",
       }
+      hl.WhichKeyBorder = {
+        bg = transparent and c.none or "#001419",
+        fg = "#063540",
+      }
     end,
   })
 end
