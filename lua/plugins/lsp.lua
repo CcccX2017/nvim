@@ -1,6 +1,7 @@
 return {
+  -- { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       registries = {
         "github:mason-org/mason-registry",
