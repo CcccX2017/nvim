@@ -75,11 +75,11 @@ end
 
 -- neovide配置
 if g.neovide then
-  -- if g.transparent_enabled then
-  --   g.neovide_transparency = 0.85
-  --   g.transparency = 0
-  -- end
-  g.transparent_enabled = false
+  if g.transparent_enabled then
+    g.neovide_transparency = 0.85
+    g.transparency = 0
+  end
+  -- g.transparent_enabled = false
   g.neovide_floating_shadow = true
   g.neovide_floating_z_height = 10
   g.neovide_light_angle_degrees = 45
