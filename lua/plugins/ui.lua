@@ -78,7 +78,7 @@ return {
   },
   -- animations
   {
-    "echasnovski/mini.animate",
+    "nvim-mini/mini.animate",
     event = "VeryLazy",
     opts = {
       open = {
@@ -162,7 +162,7 @@ return {
     end,
   },
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     opts = function(_, opts)
       vim.api.nvim_set_hl(0, "MiniIconsEslint", { fg = "#4b32c3" })
       vim.api.nvim_set_hl(0, "MiniIconsBun", { fg = "#FEF8E4" })
