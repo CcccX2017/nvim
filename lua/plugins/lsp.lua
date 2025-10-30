@@ -65,6 +65,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
+      opts.servers["*"] = {
+        keys = {
+          { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Lspsaga hover doc" },
+          { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Lspsaga code action" },
+          { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "Lspsaga goto definition" },
+        },
+      }
       opts.servers.cssls = {
         settings = {
           css = {
@@ -159,14 +166,14 @@ return {
         layout = "normal",
       },
     },
-    config = function(_, opts)
-      require("lspsaga").setup(opts)
-
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Lspsaga hover doc" }
-      keys[#keys + 1] = { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Code Action" }
-      keys[#keys + 1] = { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "Lspsaga goto definition" }
-    end,
+    -- config = function(_, opts)
+    --   require("lspsaga").setup(opts)
+    --
+    --   local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    --   keys[#keys + 1] = { "K", "<cmd>Lspsaga hover_doc<cr>", desc = "Lspsaga hover doc" }
+    --   keys[#keys + 1] = { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Code Action" }
+    --   keys[#keys + 1] = { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "Lspsaga goto definition" }
+    -- end,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",

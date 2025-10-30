@@ -49,8 +49,10 @@ return {
         ["spring-boot"] = true,
       }
 
-      LazyVim.lsp.on_attach(function(client, buffer)
-        if client.supports_method("textDocument/documentSymbol") then
+      local snacks = require("snacks")
+
+      snacks.util.lsp.on(function(buffer, client)
+        if client:supports_method("textDocument/documentSymbol") then
           if ignore_lsp[client.name] then
             return
           end
