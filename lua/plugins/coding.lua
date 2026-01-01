@@ -247,10 +247,10 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
-      colors = {
-        up_to_date = "#8CD790",
-        outdated = "#d19a66",
-        invalid = "#ee4b2b",
+      highlights = {
+        up_to_date = { fg = "#8CD790" },
+        outdated = { fg = "#d19a66" },
+        invalid = { fg = "#ee4b2b" },
       },
       icons = {
         enable = true,
@@ -269,8 +269,8 @@ return {
       require("package-info").setup(opts)
 
       -- manually register them
-      vim.cmd([[highlight PackageInfoUpToDateVersion guifg=]] .. opts.colors.up_to_date)
-      vim.cmd([[highlight PackageInfoOutdatedVersion guifg=]] .. opts.colors.outdated)
+      vim.cmd([[highlight PackageInfoUpToDateVersion guifg=]] .. opts.highlights.up_to_date.fg)
+      vim.cmd([[highlight PackageInfoOutdatedVersion guifg=]] .. opts.highlights.outdated.fg)
 
       require("telescope").load_extension("package_info")
     end,
