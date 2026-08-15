@@ -97,4 +97,21 @@ M.change_theme = function(theme)
   vim.cmd("colorscheme " .. theme)
 end
 
+-- 加载失败时回退到默认主题，避免随机主题把启动打断
+M.apply = function(theme)
+  local ok, err = pcall(M.change_theme, theme)
+  if ok then
+    return theme
+  end
+  if theme ~= default_theme then
+    vim.notify(
+      ("Failed to load %s, fallback to %s\n%s"):format(theme, default_theme, tostring(err)),
+      vim.log.levels.WARN
+    )
+    M.change_theme(default_theme)
+    return default_theme
+  end
+  error(err)
+end
+
 return M

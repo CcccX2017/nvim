@@ -26,15 +26,25 @@ M.setup = function()
     dim_inactive = false,
     lualine_bold = false,
     on_highlights = function(hl, c)
-      local util = require("solarized-osaka.util")
+      -- 新版 util 已移除 darken，按比例向黑色混合
+      local function darken(hex, amount)
+        if not hex or hex == "NONE" then
+          return hex
+        end
+        hex = hex:gsub("#", "")
+        local r = tonumber(hex:sub(1, 2), 16) or 0
+        local g = tonumber(hex:sub(3, 4), 16) or 0
+        local b = tonumber(hex:sub(5, 6), 16) or 0
+        return string.format("#%02x%02x%02x", math.floor(r * amount), math.floor(g * amount), math.floor(b * amount))
+      end
       local markdown_rainbow = { c.blue, c.yellow, c.green, c.red, c.magenta, c.cyan }
       for i, color in ipairs(markdown_rainbow) do
         hl["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }
-        hl["Headline" .. i] = { bg = util.darken(color, 0.05) }
-        hl["keyword.tsx"] = { fg = util.darken(c.green500, 0.85) }
-        hl["keyword.return.tsx"] = { fg = util.darken(c.green500, 0.85) }
-        hl["keyword.javascript"] = { fg = util.darken(c.green500, 0.85) }
-        hl["keyword.return.javascript"] = { fg = util.darken(c.green500, 0.85) }
+        hl["Headline" .. i] = { bg = darken(color, 0.05) }
+        hl["keyword.tsx"] = { fg = darken(c.green500, 0.85) }
+        hl["keyword.return.tsx"] = { fg = darken(c.green500, 0.85) }
+        hl["keyword.javascript"] = { fg = darken(c.green500, 0.85) }
+        hl["keyword.return.javascript"] = { fg = darken(c.green500, 0.85) }
       end
       hl.CursorLineNr = { fg = c.cyan500 }
       hl.LineNrAbove = { fg = c.orange700 }

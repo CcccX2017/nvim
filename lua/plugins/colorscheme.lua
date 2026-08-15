@@ -95,7 +95,10 @@ return {
     opts = function(_, opts)
       local colorscheme = require("utils.colorscheme")
       local theme = colorscheme.random()
-      opts.colorscheme = theme
+      -- 函数方式：先 themes.*.setup 再加载，避免首次启动自定义配置未生效
+      opts.colorscheme = function()
+        theme = colorscheme.apply(theme)
+      end
 
       vim.keymap.set("n", "<leader>bg", function()
         -- vim.g.transparent_enabled = not vim.g.transparent_enabled

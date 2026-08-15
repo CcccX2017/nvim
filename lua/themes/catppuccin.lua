@@ -1,17 +1,21 @@
 local M = {}
 
 function M.setup()
-  local transparent = vim.g.transparent_enabled
-
   local status_ok, catppuccin = pcall(require, "catppuccin")
 
   if not status_ok then
     return
   end
 
+  local transparent_val = vim.g.transparent_enabled
+
   catppuccin.setup({
-    flavour = transparent and "mocha" or "macchiato",
-    transparent_background = transparent,
+    flavour = transparent_val and "mocha" or "macchiato",
+    float = {
+      transparent = transparent_val,
+      solid = false,
+    },
+    transparent_background = transparent_val,
     styles = {
       keywords = { "bold" },
       functions = { "italic" },
@@ -47,7 +51,7 @@ function M.setup()
       noice = true,
       notify = true,
       semantic_tokens = true,
-      telescope = transparent,
+      telescope = transparent_val,
       treesitter = true,
       treesitter_context = false,
       rainbow_delimiters = true,
@@ -56,10 +60,10 @@ function M.setup()
     custom_highlights = function(c)
       return {
         Pmenu = {
-          bg = transparent and c.none or c.base,
+          bg = transparent_val and c.none or c.base,
         },
         NormalFloat = {
-          bg = transparent and c.none or c.base,
+          bg = transparent_val and c.none or c.base,
         },
         -- PmenuSel = {
         --   bg = c.green,
@@ -67,35 +71,35 @@ function M.setup()
         -- },
         PanelHeading = {
           fg = c.lavender,
-          bg = transparent and c.none or c.crust,
+          bg = transparent_val and c.none or c.crust,
         },
         -- lazy.nvim
         LazyH1 = {
-          bg = transparent and c.none or c.peach,
-          fg = transparent and c.lavender or c.base,
+          bg = transparent_val and c.none or c.peach,
+          fg = transparent_val and c.lavender or c.base,
           style = { "bold" },
         },
         LazyButton = {
           bg = c.none,
-          fg = transparent and c.overlay0 or c.subtext0,
+          fg = transparent_val and c.overlay0 or c.subtext0,
         },
         LazyButtonActive = {
-          bg = transparent and c.none or c.overlay1,
-          fg = transparent and c.lavender or c.base,
+          bg = transparent_val and c.none or c.overlay1,
+          fg = transparent_val and c.lavender or c.base,
           style = { "bold" },
         },
         LazyNormal = {
-          bg = transparent and c.none or c.mantle,
+          bg = transparent_val and c.none or c.mantle,
         },
         CmpItemMenu = { fg = c.subtext1 },
         FloatBorder = {
           fg = c.lavender,
-          bg = transparent and c.none or c.base,
+          bg = transparent_val and c.none or c.base,
         },
 
         FloatTitle = {
-          fg = transparent and c.lavender or c.base,
-          bg = transparent and c.none or c.lavender,
+          fg = transparent_val and c.lavender or c.base,
+          bg = transparent_val and c.none or c.lavender,
         },
         LazySpecial = { fg = c.green },
         LineNr = {
@@ -130,7 +134,7 @@ function M.setup()
         },
         -- TreesitterContext
         TreesitterContext = {
-          bg = transparent and c.none or c.base,
+          bg = transparent_val and c.none or c.base,
         },
         TreesitterContextSeparator = {
           bg = c.none,
